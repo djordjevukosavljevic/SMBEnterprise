@@ -22,18 +22,10 @@ public class Appointment
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-
-    // Used annotations in order to successfully serialize datetime fields
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS][.SS][.S]", shape = JsonFormat.Shape.STRING)
+    @JsonFormat
     @Column(name = "createdAt", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
-
-    // Used annotations in order to successfully serialize datetime fields
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS][.SS][.S]", shape = JsonFormat.Shape.STRING)
+    @JsonFormat
     @Column(name = "updatedAt", nullable = false)
     private LocalDateTime updatetAt = LocalDateTime.now();
     @JsonFormat
