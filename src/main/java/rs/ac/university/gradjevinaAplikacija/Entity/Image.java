@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Image
+public class    Image
 {
     @JsonFormat
     @Id
