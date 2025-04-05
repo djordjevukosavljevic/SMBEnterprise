@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AppointmentService
+public class   AppointmentService
 {
     private final AppointmentRepository repository;
 
