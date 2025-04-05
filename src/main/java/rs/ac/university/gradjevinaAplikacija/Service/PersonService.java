@@ -38,4 +38,9 @@ public class PersonService
     {
         repository.save(person);
     }
+
+    public void savePerson(Person person)
+    {
+        repository.save(person);
+    }
 }

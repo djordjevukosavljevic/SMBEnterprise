@@ -38,6 +38,16 @@ public class PersonController
         return service.getPersonByEmail(email);
     }
 
+    @PostMapping
+    public void savePerson(@RequestBody Person person)
+    {
+        service.savePerson(person);
+        if(person == null)
+        {
+            System.out.println("Person does not exist");
+        }
+    }
+
     @PutMapping(path="/{id}")
     public void updatePerson(@RequestBody Person person)
     {
