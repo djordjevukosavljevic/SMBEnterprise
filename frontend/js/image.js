@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            const tableBody = document.getElementById('personTableBody');
+            const tableBody = document.getElementById('imageTableBody');
             tableBody.innerHTML = ''; // Clear existing content
             
             data.forEach(image => {

@@ -27,7 +27,7 @@ public class Appointment
     private LocalDateTime createdAt = LocalDateTime.now();
     @JsonFormat
     @Column(name = "updatedAt", nullable = false)
-    private LocalDateTime updatetAt = LocalDateTime.now();
+    private LocalDateTime updatedAt = LocalDateTime.now();
     @JsonFormat
     @Column(name = "message", nullable = false)
     private String message;

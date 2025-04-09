@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 const row = document.createElement("tr");
 
                 row.innerHTML = `
-                    <th scope="row">${appointment.id}</th>
                     <td>${appointment.createdAt}</td>
                     <td>${appointment.updatedAt}</td>
                     <td>${appointment.message}</td>
