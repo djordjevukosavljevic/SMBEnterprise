@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const row = document.createElement('tr');
                 
                 row.innerHTML = `
-                    <th scope="row">${person.id}</th>
                     <td>${person.name}</td>
                     <td>${person.surname || person.surrname}</td>
                     <td>${person.email}</td>
