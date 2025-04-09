@@ -42,10 +42,6 @@ public class PersonController
     public void savePerson(@RequestBody Person person)
     {
         service.savePerson(person);
-        if(person == null)
-        {
-            System.out.println("Person does not exist");
-        }
     }
 
     @PutMapping(path="/{id}")

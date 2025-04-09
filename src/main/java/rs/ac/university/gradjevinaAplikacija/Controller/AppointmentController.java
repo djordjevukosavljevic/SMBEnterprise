@@ -7,6 +7,7 @@ import rs.ac.university.gradjevinaAplikacija.Service.AppointmentService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "api/appointment")
 public class AppointmentController
@@ -43,5 +44,10 @@ public class AppointmentController
         service.deleteAppointmentById(id);
     }
 
+    @PutMapping(path="/{id}")
+    public void updateAppointment(@RequestBody Appointment appointment)
+    {
+        service.updateAppointment(appointment);
+    }
 
 }

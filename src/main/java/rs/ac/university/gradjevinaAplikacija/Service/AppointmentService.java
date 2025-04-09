@@ -1,5 +1,6 @@
 package rs.ac.university.gradjevinaAplikacija.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Repository.AppointmentRepository;
@@ -35,6 +36,11 @@ public class   AppointmentService
     public void deleteAppointmentById(Integer id)
     {
         repository.deleteById(id);
+    }
+
+    public void updateAppointment(Appointment appointment)
+    {
+        repository.save(appointment);
     }
 
 }
