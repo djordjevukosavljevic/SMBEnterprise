@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 
+@CrossOrigin
 @RestController
 @RequestMapping(path ="/api/image")
 public class ImageController
