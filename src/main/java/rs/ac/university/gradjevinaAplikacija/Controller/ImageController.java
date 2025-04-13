@@ -21,6 +21,12 @@ public class ImageController
         this.service = service;
     }
 
+    @PostMapping
+    public void uploadImage(@RequestBody Image image)
+    {
+        service.uploadImage(image);
+    }
+
     @GetMapping
     public List<Image> getAllImages()
     {
@@ -33,11 +39,15 @@ public class ImageController
         return service.findImageById(id);
     }
 
-    @PostMapping
-    public void uploadImage(@RequestBody Image image)
+    @PutMapping(path="/{id}")
+    public void changeImage(@RequestBody Image image)
     {
-        service.uploadImage(image);
+        service.updateImage(image);
     }
 
-
+    @DeleteMapping(path="/{id}")
+    public void deleteImageById(@PathVariable Integer id)
+    {
+        service.deleteImageById(id);
+    }
 }

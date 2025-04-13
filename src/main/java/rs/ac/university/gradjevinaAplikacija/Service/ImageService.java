@@ -17,6 +17,11 @@ public class ImageService
         this.repository = repository;
     }
 
+    public void uploadImage(Image image)
+    {
+        repository.save(image);
+    }
+
     public List<Image> getAllImages()
     {
         return repository.findAll();
@@ -27,10 +32,13 @@ public class ImageService
         return repository.findById(id);
     }
 
-    public void uploadImage(Image image)
+    public void updateImage(Image image)
     {
         repository.save(image);
     }
 
-
+    public void deleteImageById(Integer id)
+    {
+        repository.deleteById(id);
+    }
 }
