@@ -34,4 +34,5 @@ public class Appointment
     @JsonFormat
     @Column(name="is_active", nullable = false)
     private boolean isActive;
+    
 }
