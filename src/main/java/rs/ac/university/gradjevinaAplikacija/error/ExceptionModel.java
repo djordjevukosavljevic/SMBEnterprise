@@ -1,7 +1,5 @@
 package rs.ac.university.gradjevinaAplikacija.error;
 
-
-
 public class ExceptionModel
 {
 
@@ -45,6 +43,5 @@ public class ExceptionModel
     {
         this.path = path;
     }
-
 
 }
