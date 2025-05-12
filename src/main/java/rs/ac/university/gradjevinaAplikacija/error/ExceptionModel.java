@@ -43,5 +43,4 @@ public class ExceptionModel
     {
         this.path = path;
     }
-
 }
