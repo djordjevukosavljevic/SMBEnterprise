@@ -8,13 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             const tableBody = document.getElementById("msgTableBody");
-            tableBody.innerHTML = ""; // Clear if something exists
+            tableBody.innerHTML = ''; // Clear if something exists
 
             data.forEach(message => {
+                console.log(message)
                 const row = document.createElement('tr');
-                console.log(message);
                 row.innerHtml = `
                     <td>${message.email}<td>
+                    <td>${message.text}<td>
                     <td>${message.createdAt}<td>
                     <td>${message.isActive}<td>
                     <td>
@@ -27,15 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
                             </button>
                         </div>
                     </td>
-                    `;
+                `;
 
                 tableBody.appendChild(row);
             });
         })
         .catch(error => {
             console.error('Error', error);
-            document.getElementById('msgTableBody').innerHTML = 
-            `
+            document.getElementById('msgTableBody').innerHTML =
+                `
                 <tr>
                     <td colspan="6" class="text-danger text-center">
                         Error loading data: ${error.message}

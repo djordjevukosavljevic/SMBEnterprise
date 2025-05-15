@@ -28,7 +28,7 @@ public class Message
     @Column(name="created_at", nullable = false)
     @JsonFormat
     private final LocalDateTime createdAt = LocalDateTime.now();
-    @Column(name="isActive", nullable = false)
+    @Column(name="is_active", nullable = false)
     @JsonFormat
     private boolean isActive;
 }
