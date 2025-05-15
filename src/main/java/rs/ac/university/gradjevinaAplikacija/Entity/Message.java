@@ -18,7 +18,7 @@ public class Message
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonFormat
-    private int id;
+    private Integer id;
     @Column(name="email", nullable = false)
     @JsonFormat
     private String email;
