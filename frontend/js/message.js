@@ -13,23 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
             data.forEach(message => {
                 console.log(message)
                 const row = document.createElement('tr');
-                row.innerHtml = `
-                    <td>${message.email}<td>
-                    <td>${message.text}<td>
-                    <td>${message.createdAt}<td>
-                    <td>${message.isActive}<td>
+                row.innerHTML = `
+                    <td>${message.email}</td>
+                    <td>${message.text}</td>
+                    <td>${message.createdAt}</td>
+                    <td>${message.isActive}</td>
                     <td>
-                        <div class="btn-grup">
+                        <div class="btn-group">
                             <button class="btn btn-sm btn-primary">
                                 <i class="fa-solid fa-pen-to-square"></i> Change
                             </button>
                             <button class="btn btn-sm btn-danger">
-                                <i class="fa-solid fa-pen-to-square"></i> Delete
+                                <i class="fa-solid fa-trash"></i> Delete
                             </button>
                         </div>
                     </td>
                 `;
-
                 tableBody.appendChild(row);
             });
         })
