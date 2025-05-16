@@ -11,4 +11,10 @@ public class ViewController
     {
         return "image";
     }
+
+    @GetMapping("/appointment-view")
+    public String appointmentsView()
+    {
+        return "appointemnt";
+    }
 }
