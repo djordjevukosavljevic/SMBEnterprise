@@ -1,4 +1,3 @@
-console.log("JSFILE uploaded")
 document.addEventListener('DOMContentLoaded', function () {
     fetch('http://localhost:8082/api/image')
         .then(response => {
