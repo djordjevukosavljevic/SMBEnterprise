@@ -23,4 +23,10 @@ public class ViewController
     {
         return "about";
     }
+
+    @GetMapping("/services-view")
+    public String servciesView()
+    {
+        return "services";
+    }
 }
