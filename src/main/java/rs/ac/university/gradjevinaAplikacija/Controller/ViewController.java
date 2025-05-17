@@ -13,8 +13,8 @@ public class ViewController
     }
 
     @GetMapping("/appointment-view")
-    public String appointmentsView()
+    public String appointmentView()
     {
-        return "appointemnt";
+        return "appointment";
     }
 }

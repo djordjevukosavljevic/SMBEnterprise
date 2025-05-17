@@ -8,7 +8,7 @@ public class GradjevinaAplikacijaApplication
 {
 
 	public static void main(String[] args)
-	{
+	{	
 		SpringApplication.run(GradjevinaAplikacijaApplication.class, args);
 	}
 	
