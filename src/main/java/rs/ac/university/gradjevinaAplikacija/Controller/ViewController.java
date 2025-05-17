@@ -17,4 +17,10 @@ public class ViewController
     {
         return "appointment";
     }
+
+    @GetMapping("/about-view")
+    public String aboutView()
+    {
+        return "about";
+    }
 }
