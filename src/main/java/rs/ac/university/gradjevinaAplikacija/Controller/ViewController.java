@@ -29,4 +29,10 @@ public class ViewController
     {
         return "services";
     }
+
+    @GetMapping("/clients-view")
+    public String clientsView()
+    {
+        return "clients";
+    }
 }
