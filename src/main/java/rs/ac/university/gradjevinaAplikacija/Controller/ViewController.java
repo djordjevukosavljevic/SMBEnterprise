@@ -35,4 +35,10 @@ public class ViewController
     {
         return "clients";
     }
+
+    @GetMapping("/contact-view")
+    public String contactView()
+    {
+        return "contact";
+    }
 }
