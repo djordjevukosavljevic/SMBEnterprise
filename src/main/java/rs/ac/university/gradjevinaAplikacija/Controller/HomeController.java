@@ -13,4 +13,4 @@ public class HomeController
     public String defaultView(){
         return "index";
     }
-}
+}   
