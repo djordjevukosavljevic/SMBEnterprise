@@ -25,17 +25,22 @@ body {
   padding: 0;
 }
 
-.form-control,
 .card,
+.form-control,
+.navbar,
 .container,
 .row,
-.col{
-    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
-}
-
-.card,
-.form-control{
+.col,
+.modal-content,
+.alert,
+.input-group,
+.dropdown-menu,
+.form-group,
+.table table-striped
+{
     background-color: rgba(255,255,255,0.3);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(8px);
+    border: none;
+    box-shadow: none;
 }
