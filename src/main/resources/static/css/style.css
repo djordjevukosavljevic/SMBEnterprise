@@ -2,3 +2,26 @@
     color: #ecff1bbf;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.8;
+  z-index: -1;
+}
+body {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
