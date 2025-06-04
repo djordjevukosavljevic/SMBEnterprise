@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path="/api/index")
 public class HomeController
 {
-
+    
     @GetMapping
     public String defaultView(){
         return "index";
