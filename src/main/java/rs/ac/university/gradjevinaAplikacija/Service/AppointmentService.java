@@ -6,20 +6,26 @@ import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Repository.AppointmentRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AppointmentService
 {
-    private AppointmentRepository repository;
+    private AppointmentRepository appointmentRepository;
 
     @Autowired
-    public AppointmentService(AppointmentRepository repository)
+    public AppointmentService(AppointmentRepository appointmentRepository)
     {
-        this.repository = repository;
+        this.appointmentRepository = appointmentRepository;
     }
 
     public List<Appointment> getAllAppointments()
     {
-        return repository.findAll();
+        return appointmentRepository.findAll();
+    }
+
+    public Optional<Appointment> findAppointmentById(Integer id)
+    {
+        return appointmentRepository.findById(id);
     }
 }
