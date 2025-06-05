@@ -30,8 +30,8 @@ public class AppointmentService
         return appointmentRepository.findById(id);
     }
 
-    public Optional<Appointment> findAppointmentByDateCreatedAt(LocalDateTime createdAt)
-    {
-        return appointmentRepository.findAppontmentByDateCreatedAt(createdAt);
-    }
+//    public Optional<Appointment> findAppointmentByDateCreatedAt(LocalDateTime createdAt)
+//    {
+//        return appointmentRepository.findAppontmentByDateCreatedAt(createdAt);
+//    }
 }
