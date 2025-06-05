@@ -8,5 +8,5 @@ import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 @Repository
 public interface AppointmentRepository extends JpaRepository<Appointment, Integer>
 {
-    
+
 }

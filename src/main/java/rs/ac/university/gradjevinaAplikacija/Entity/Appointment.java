@@ -3,11 +3,13 @@ package rs.ac.university.gradjevinaAplikacija.Entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity(name="appointment")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Appointment
