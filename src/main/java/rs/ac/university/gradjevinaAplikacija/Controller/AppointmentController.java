@@ -39,9 +39,5 @@ public class AppointmentController
         return appointmentService.findAppointmentById(id);
     }
 
-//    @GetMapping(path = "/{createdAt}")
-//    public Optional<Appointment> findAppointByDateCreated(@PathVariable LocalDateTime createdAt)
-//    {
-//        return appointmentService.findAppointmentByDateCreatedAt(createdAt);
-//    }
+
 }
