@@ -10,6 +10,7 @@ import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Repository.AppointmentRepository;
 import rs.ac.university.gradjevinaAplikacija.Service.AppointmentService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +39,9 @@ public class AppointmentController
         return appointmentService.findAppointmentById(id);
     }
 
-    
+    @GetMapping(path = "/{createdAt}")
+    public Optional<Appointment> findAppointByDateCreated(@PathVariable LocalDateTime createdAt)
+    {
+        return appointmentService.findAppointmentByDateCreatedAt(createdAt);
+    }
 }
