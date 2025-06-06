@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const row = document.createElement('tr');
 
                 row.innerHTML =
-                    `
+                `
                 <th scope="row">${appointment.id}<th>
-                <td>${appointment.created_at}<td>
-                <td>${appointment.updated_at}<td>
+                <td>${appointment.createdAt}<td>
+                <td>${appointment.updatedAt}<td>
                 <td>${appointment.title}<td>
                 <td>${appointment.name}<td>
                 <td>${appointment.lastname}<td>

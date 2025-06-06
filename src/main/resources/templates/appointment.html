@@ -15,8 +15,26 @@
     <div th:replace="layout/background :: background"></div>
 
     <h1 class="h3 text-center">Appointment scheduling</h1>
-    <div class="appointmentTableBody">
-        <!-- Data for appointments will be inserted here -->
+    <div>
+        <h1 class="h3">Appoitnments</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="colo">Id</th>
+                    <th scope="colo">Created at</th>
+                    <th scope="colo">Updated at</th>
+                    <th scope="colo">title</th>
+                    <th scope="colo">Name</th>
+                    <th scope="colo">Lastname</th>
+                    <th scope="colo">Email</th>
+                    <th scope="colo">Contact number</th>
+                    <th scope="colo">Message</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTableBody">
+                <!-- Data for appointments will be inserted here -->
+            </tbody>
+        </table>
     </div>
     <div th:replace="layout/footer :: footer"></div>
     <script type="text/javascript" src="/js/appointment.js"></script>
