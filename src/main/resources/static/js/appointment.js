@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 row.innerHTML =
                 `
-                <td>${appointment.id}</td>
-                <td>${appointment.createdAt}<td>
-                <td>${appointment.updatedAt}<td>
-                <td>${appointment.title}<td>
-                <td>${appointment.email}<td>
-                <td>${appointment.mobilePhone}<td>
-                <td>${appointment.message}<td>
+                <td scope="col">${appointment.id}</td>
+                <td scope="col">${appointment.createdAt}<td>
+                <td scope="col">${appointment.updatedAt}<td>
+                <td scope="col">${appointment.title}<td>
+                <td scope="col">${appointment.email}<td>
+                <td scope="col">${appointment.mobilePhone}<td>
+                <td scope="col">${appointment.message}<td>
                 <td>
                     <div class="btn-group">
                         <button class="btn btn-sm btn-primary">
