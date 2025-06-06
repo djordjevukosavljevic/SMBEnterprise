@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
             tableBody.innerHTML = ''; // Clear existing content
 
             data.forEach(image => {
+                console.log(image)
                 const row = document.createElement('tr');
 
                 row.innerHTML = `
-                    <th scope="row">${image.id}</th>
                     <td>${image.name}</td>
                     <td>${image.size}</td>
                     <td>${image.extns}</td>

@@ -12,12 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
             tableBody.innerHTML = '';   // Clear existing
 
             data.forEach(appointment => {
-                console.log(appointment);
                 const row = document.createElement('tr');
 
                 row.innerHTML =
                 `
-                <th scope="row">${appointment.id}<th>
                 <td>${appointment.createdAt}<td>
                 <td>${appointment.updatedAt}<td>
                 <td>${appointment.title}<td>
