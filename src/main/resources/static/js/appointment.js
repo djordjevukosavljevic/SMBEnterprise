@@ -16,11 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 row.innerHTML =
                 `
+                <td>${appointment.id}</td>
                 <td>${appointment.createdAt}<td>
                 <td>${appointment.updatedAt}<td>
                 <td>${appointment.title}<td>
-                <td>${appointment.name}<td>
-                <td>${appointment.lastname}<td>
                 <td>${appointment.email}<td>
                 <td>${appointment.mobilePhone}<td>
                 <td>${appointment.message}<td>
