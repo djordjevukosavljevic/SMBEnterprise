@@ -16,10 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 row.innerHTML =
                 `
-                <td>${appointment.createdAt}<td>
-                <td>${appointment.updatedAt}<td>
-                <td>${appointment.email}<td>
-                    <td>
+                <td>${appointment.createdAt}</td>
+                <td>${appointment.updatedAt}</td>
+                <td>${appointment.title}</td>
+                <td>${appointment.name}</td>
+                <td>${appointment.lastname}</td>
+                <td>${appointment.email}</td>
+                <td>${appointment.mobilePhone}</td>
+                <td>${appointment.message}</td>
+                <td>
                     <div class="btn-group">
                         <button class="btn btn-sm btn-primary">
                             <i class="fa-solid fa-pen-to-square"></i> Change
