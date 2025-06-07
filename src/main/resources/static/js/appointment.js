@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${appointment.createdAt}<td>
                 <td>${appointment.updatedAt}<td>
                 <td>${appointment.email}<td>
-                <td>${appointment.mobilePhone}<td>
                     <td>
                     <div class="btn-group">
                         <button class="btn btn-sm btn-primary">
