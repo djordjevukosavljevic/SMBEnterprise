@@ -50,4 +50,10 @@ public class ImageController
     {
         service.deleteImageById(id);
     }
+
+    @GetMapping(path="/name")
+    public Image findImageByName(@PathVariable String name)
+    {
+        return service.findImgByName(name);
+    }
 }

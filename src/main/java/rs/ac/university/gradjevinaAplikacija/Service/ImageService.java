@@ -41,4 +41,9 @@ public class ImageService
     {
         repository.deleteById(id);
     }
+
+    public Image findImgByName(String name)
+    {
+        return repository.findByName(name);
+    }
 }
