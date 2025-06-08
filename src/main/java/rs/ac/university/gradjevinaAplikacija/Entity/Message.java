@@ -40,12 +40,39 @@ public class Message
     @JsonFormat
     private String mobileNumber;
 
-    @Column(name="title", nullable = false)
+    @Column(name="subject", nullable = false)
     @JsonFormat
-    private String title;
+    private String subject;
 
     @Column(name="message", nullable = false)
     @JsonFormat
     private String message;
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
