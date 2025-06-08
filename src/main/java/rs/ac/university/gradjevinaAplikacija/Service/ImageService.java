@@ -1,5 +1,6 @@
 package rs.ac.university.gradjevinaAplikacija.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rs.ac.university.gradjevinaAplikacija.Entity.Image;
 import rs.ac.university.gradjevinaAplikacija.Repository.ImageRepository;
@@ -12,6 +13,7 @@ public class ImageService
 {
     private final ImageRepository repository;
 
+    @Autowired
     public ImageService(ImageRepository repository)
     {
         this.repository = repository;
