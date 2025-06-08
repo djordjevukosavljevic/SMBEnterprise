@@ -39,7 +39,7 @@ public class MessageController
     {
         return messageService.getMessageById(id);
     }
-
+//
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
