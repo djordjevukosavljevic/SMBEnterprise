@@ -1,10 +1,7 @@
 package rs.ac.university.gradjevinaAplikacija.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Message;
 import rs.ac.university.gradjevinaAplikacija.Service.MessageService;
 
@@ -29,9 +26,16 @@ public class MessageController
         return messageService.getAllMessages();
     }
 
+    @GetMapping(path="/{id}")
     public Optional<Message> getMessageById(@PathVariable Integer id)
     {
         return messageService.getMessageById(id);
+    }
+
+    @PostMapping
+    public void sendMessage(@RequestBody Message message)
+    {
+        messageService.sendMessage(message);
     }
 
 }
