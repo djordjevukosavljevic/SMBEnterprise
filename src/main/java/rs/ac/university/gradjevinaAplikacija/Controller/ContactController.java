@@ -54,6 +54,7 @@ public class ContactController
                 Created: %s %s
                 
                 Name: %s %s
+                Lastname: %s %s
                 Email: %s
                 Contact Number: %s
                 Subject: %s

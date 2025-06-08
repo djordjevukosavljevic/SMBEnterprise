@@ -1,6 +1,11 @@
 package rs.ac.university.gradjevinaAplikacija.Controller;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Message;
 import rs.ac.university.gradjevinaAplikacija.Service.MessageService;
@@ -12,12 +17,15 @@ import java.util.Optional;
 @RequestMapping(path="/api/message")
 public class MessageController
 {
+    private final JavaMailSender mailSender;
+
     private final MessageService messageService;
 
     @Autowired
-    public MessageController(MessageService messageService)
+    public MessageController(MessageService messageService, JavaMailSender mailSender)
     {
         this.messageService = messageService;
+        this.mailSender = mailSender;
     }
 
     @GetMapping
@@ -32,10 +40,50 @@ public class MessageController
         return messageService.getMessageById(id);
     }
 
+
     @PostMapping
-    public void sendMessage(@RequestBody Message message)
+    public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
-        messageService.sendMessage(message);
+        try
+        {
+            sendMail(message);
+            return ResponseEntity.ok("Message sent successfully");
+        } catch (Exception e)
+        {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to send a message");
+        }
     }
+
+
+    public void sendMail(Message message)
+    {
+        SimpleMailMessage email = new SimpleMailMessage();
+        email.setSubject("Subject:" + message.getSubject());
+        email.setTo("Email: djordjevukosavljevic01@gmail.com");
+        email.setText(buildEmailBody(message));
+
+        mailSender.send(email);
+    }
+
+
+    public String buildEmailBody(Message m)
+    {
+        return String.format("""
+                Nova poruka sa sajta:
+                
+                Napravljena: %s %s
+                Ime: %s %s
+                Prezime: %s %s
+                Email: %s
+                Contact number: %s
+                Title: %s
+                
+                Message: %s %s %s %s
+                """, m.getCreatedAt(),m.getName(),m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(),m.getMessage()
+
+        );
+    }
+
 
 }
