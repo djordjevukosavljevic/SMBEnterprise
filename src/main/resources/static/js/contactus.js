@@ -1,43 +1,29 @@
-// (async () => await fetch('/api/contact', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-//     body: JSON.stringify({
-//         name: "John",
-//         lastname: "John",
-//         email: "John",
-//         contactNumber: "John",
-//         subject: "John",
-//         message: "John"
-//     })
-// })();
+        const form = e.target;
+        const data = {
+            name: form.name.value,
+            lastname: form.lastname.value,
+            email: form.email.value,
+            mobileNumber: form.contactNumber.value,
+            subject: form.subject.value,
+            message: form.message.value // ← matches backend field
+        };
 
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const data = {
-        name: form.name.value,
-        lastname: form.lastname.value,
-        email: form.email.value,
-        contactNumber: form.contactNumber.value, 
-        subject: form.subject.value,
-        message: form.message.value
-    };
+        try {
+            const response = await fetch("/api/message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
 
-    try{
-        const response = await fetch("/api/message", {
-            method: 'POST',
-            headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify(data)
-        });
-
-        const text = await response.text();
-        document.getElementById("status").innerText = text;
-        
-    } catch(err){
-        document.getElementById("status").innerText = "Failed to send..." + err.message;
-    }
+            const text = await response.text();
+            document.getElementById("status").innerText = text;
+            form.reset();
+        } catch (err) {
+            document.getElementById("status").innerText = "Failed to send... " + err.message;
+        }
+    });
 });

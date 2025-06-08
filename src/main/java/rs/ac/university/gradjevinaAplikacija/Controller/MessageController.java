@@ -40,18 +40,19 @@ public class MessageController
         return messageService.getMessageById(id);
     }
 
-
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
+
         try
         {
+            messageService.saveMessage(message);
             sendMail(message);
             return ResponseEntity.ok("Message sent successfully");
         } catch (Exception e)
         {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Failed to send a message");
+                    .body("Failed to send a message or save message");
         }
     }
 
@@ -59,8 +60,8 @@ public class MessageController
     public void sendMail(Message message)
     {
         SimpleMailMessage email = new SimpleMailMessage();
-        email.setSubject("Subject:" + message.getSubject());
-        email.setTo("Email: djordjevukosavljevic01@gmail.com");
+        email.setSubject(message.getSubject());
+        email.setTo("djordjevukosavljevic01@gmail.com");
         email.setText(buildEmailBody(message));
 
         mailSender.send(email);
