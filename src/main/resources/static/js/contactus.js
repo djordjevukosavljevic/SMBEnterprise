@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email: form.email.value,
             mobileNumber: form.contactNumber.value,
             subject: form.subject.value,
-            message: form.message.value // ← matches backend field
+            message: form.message.value
         };
 
         try {

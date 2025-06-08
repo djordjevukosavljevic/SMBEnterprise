@@ -38,17 +38,15 @@ public class MessageController
     {
         return messageService.getMessageById(id);
     }
-//
 
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
-
         try
         {
             messageService.saveMessage(message);
             sendMail(message);
-            return ResponseEntity.ok("Message sent successfully");
+            return ResponseEntity.ok("Message sent successfully...");
         } catch (Exception e)
         {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -61,7 +59,7 @@ public class MessageController
     {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(message.getSubject());
-        email.setTo("djordje.vukosavljevic01@gmail.com");
+        email.setTo("katarinavukosavljevic94@gmail.com ");
         email.setText(buildEmailBody(message));
 
         mailSender.send(email);
