@@ -1,6 +1,5 @@
 package rs.ac.university.gradjevinaAplikacija.Controller;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +39,7 @@ public class MessageController
         return messageService.getMessageById(id);
     }
 //
+
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
@@ -61,7 +61,7 @@ public class MessageController
     {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(message.getSubject());
-        email.setTo("djordjevukosavljevic01@gmail.com");
+        email.setTo("djordje.vukosavljevic01@gmail.com");
         email.setText(buildEmailBody(message));
 
         mailSender.send(email);
@@ -73,14 +73,14 @@ public class MessageController
         return String.format("""
                 Nova poruka sa sajta:
                 
-                Napravljena: %s %s
-                Ime: %s %s
-                Prezime: %s %s
+                Napravljena: %s
+                Ime: %s
+                Prezime: %s
                 Email: %s
                 Contact number: %s
                 Title: %s
                 
-                Message: %s %s %s %s
+                Message: %s
                 """, m.getCreatedAt(),m.getName(),m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(),m.getMessage()
 
         );
