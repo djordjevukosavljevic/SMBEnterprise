@@ -8,7 +8,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Message;
 import rs.ac.university.gradjevinaAplikacija.Service.MessageService;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -59,7 +58,7 @@ public class MessageController
     {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(message.getSubject());
-        email.setTo("katarinavukosavljevic94@gmail.com ");
+        email.setTo("djordje.vukosavljevic01@gmail.com");
         email.setText(buildEmailBody(message));
 
         mailSender.send(email);
