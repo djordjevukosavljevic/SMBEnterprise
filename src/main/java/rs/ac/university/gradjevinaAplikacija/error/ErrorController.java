@@ -19,4 +19,6 @@ public class ErrorController
         model.setPath(request.getServletPath());
         return model;
     }
+
+
 }

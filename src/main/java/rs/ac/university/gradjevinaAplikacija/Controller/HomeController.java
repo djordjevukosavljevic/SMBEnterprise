@@ -9,8 +9,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController
 {
 
-    @GetMapping
-    public String defaultView(){
-        return "index";
-    }
+
 }

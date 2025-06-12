@@ -6,17 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController
 {
+    @GetMapping
+    public String defaultView()
+    {
+        return "index";
+    }
+
     @GetMapping("/image")
     public String imageView()
     {
         return "image";
     }
 
-    @GetMapping("/appointment")
-    public String appointmentView()
-    {
-        return "appointment";
-    }
 
     @GetMapping("/about")
     public String aboutView()
@@ -41,4 +42,6 @@ public class ViewController
     {
         return "contact";
     }
+
+
 }
