@@ -6,37 +6,37 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController
 {
-    @GetMapping("/image-view")
+    @GetMapping("/image")
     public String imageView()
     {
         return "image";
     }
 
-    @GetMapping("/appointment-view")
+    @GetMapping("/appointment")
     public String appointmentView()
     {
         return "appointment";
     }
 
-    @GetMapping("/about-view")
+    @GetMapping("/about")
     public String aboutView()
     {
         return "about";
     }
 
-    @GetMapping("/services-view")
+    @GetMapping("/services")
     public String servciesView()
     {
         return "services";
     }
 
-    @GetMapping("/clients-view")
+    @GetMapping("/clients")
     public String clientsView()
     {
         return "clients";
     }
 
-    @GetMapping("/contact-view")
+    @GetMapping("/contact")
     public String contactView()
     {
         return "contact";
