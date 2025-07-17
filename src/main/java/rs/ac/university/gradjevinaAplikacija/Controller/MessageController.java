@@ -53,7 +53,6 @@ public class MessageController
         }
     }
 
-
     public void sendMail(Message message)
     {
         SimpleMailMessage email = new SimpleMailMessage();
