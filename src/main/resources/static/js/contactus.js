@@ -12,17 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
             message: form.message.value
         };
 
-
         try {
             // Added in order to check if there are numbers in a place where it needs to be letters.
             const hasNumbers = (str) => /\d/.test(str);
-            if (hasNumbers(form.name.value) || hasNumbers(form.lastname.value) || hasNumbers(form.email.value) || hasNumbers(form.subject.value)) {
+            if (hasNumbers(form.name.value) || hasNumbers(form.lastname.value)) {
                 window.alert("Name, lastname, email, and subject must not contain numbers.");
                 window.location.reload();
                 throw new Error('We are not going to send this.');
                 console.log('(|)');
             }
-
 
             const response = await fetch("/api/message", {
                 method: "POST",
@@ -33,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const text = await response.text();
             document.getElementById("status").innerText = text;
             form.reset();
+            window.location.reload();
         } catch (err) {
             document.getElementById("status").innerText = "Failed to send... " + err.message;
         }
