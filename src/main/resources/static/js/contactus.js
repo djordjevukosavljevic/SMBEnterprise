@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Added in order to check if there are numbers in a place where it needs to be letters.
             const hasNumbers = (str) => /\d/.test(str);
             if (hasNumbers(form.name.value) || hasNumbers(form.lastname.value)) {
-                window.alert("Name, lastname, email, and subject must not contain numbers.");
+                window.alert("Name, lastname must not contain numbers.");
                 window.location.reload();
-                throw new Error('We are not going to send this.');
                 console.log('(|)');
+                throw new Error('We are not going to send this.');
             }
 
             const response = await fetch("/api/message", {
