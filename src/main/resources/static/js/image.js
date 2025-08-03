@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
             tableBody.innerHTML = ''; // Clear existing content
 
             data.forEach(image => {
-                console.log(image)
                 const row = document.createElement('tr');
 
                 row.innerHTML = `

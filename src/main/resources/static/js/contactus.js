@@ -29,10 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const text = await response.text();
             document.getElementById("status").innerText = text;
+            console.log("This should pass...");
+            window.alert("Thank you for contacting us!")
             form.reset();
             window.location.reload();
         } catch (err) {
             document.getElementById("status").innerText = "Failed to send... " + err.message;
+            window.alert("Failed to send message.");
+            window.location.reload();
         }
     });
 });
