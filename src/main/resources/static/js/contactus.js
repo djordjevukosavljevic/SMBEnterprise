@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (hasNumbers(form.name.value) || hasNumbers(form.lastname.value)) {
                 window.alert("Name, lastname must not contain numbers.");
                 window.location.reload();
-                console.log('(|)');
                 throw new Error('We are not going to send this.');
             }
 
