@@ -7,5 +7,5 @@ import rs.ac.university.gradjevinaAplikacija.Entity.Message;
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Integer>
 {
-
+    
 }
