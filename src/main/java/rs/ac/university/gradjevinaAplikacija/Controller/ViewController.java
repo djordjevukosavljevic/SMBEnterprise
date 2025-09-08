@@ -19,7 +19,6 @@ public class ViewController
         return "image";
     }
 
-
     @GetMapping("/about")
     public String aboutView()
     {
