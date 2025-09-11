@@ -18,7 +18,7 @@ public class Appointment
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonFormat
     @Column(name="id", nullable = false)
-    private int id;
+    private Integer id;
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private LocalDateTime dateCreatedAt;
