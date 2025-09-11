@@ -30,7 +30,7 @@ public class AppointmentController
         return appointmentService.getAllAppointments();
     }
 
-    @GetMapping(path = "/{id")
+    @GetMapping(path = "/{id}")
     public Optional<Appointment> getAppointmentById(@PathVariable Integer id)
     {
         return appointmentService.getAppointmentById(id);
