@@ -43,4 +43,10 @@ public class ViewController
         return "contact";
     }
 
+    @GetMapping("/appointment")
+    public String appointmentsView()
+    {
+        return "appointment";
+    }
+
 }
