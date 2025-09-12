@@ -25,9 +25,18 @@ public class Appointment
     @JsonFormat
     private boolean isActive;
 
+    @Column(name = "isTaken", nullable = false)
+    @JsonFormat
+    private boolean isTaken;
+
     public LocalDateTime getDateCreatedAt()
     {
         return dateCreatedAt;
+    }
+
+    public boolean getIsTaken()
+    {
+        return  isTaken;
     }
 
     public boolean getIsActive(){
