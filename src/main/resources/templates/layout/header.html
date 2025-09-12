@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
     <div th:replace="layout/background :: background"></div>
     <div th:fragment="header">
@@ -31,12 +33,17 @@
                         <a class="nav-link" href="/image" asp-controller="Image"><i class="fa-solid fa-images"></i>
                             Gallery</a>
                     </li>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/appointments" asp-controller="Appointment"> <i class="fa-solid fa-calendar-days"></i>
+                        Appointments</a>
+                    </li>
                 </ul>
-                <form class="d-flex me-3">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
                 <div class="d-none d-lg-block">
-                    <img th:src="@{/images/logo.svg}" alt="logo" style="position: absolute; top: -50px; right: 20px; height: auto; width: 200px; z-index: 10;">
+                    <img th:src="@{/images/logo.svg}" alt="logo"
+                        style="position: absolute; top: -50px; right: 20px; height: auto; width: 200px; z-index: 10;">
                 </div>
             </div>
         </nav>
