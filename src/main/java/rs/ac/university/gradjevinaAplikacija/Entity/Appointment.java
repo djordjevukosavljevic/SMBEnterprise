@@ -20,7 +20,7 @@ public class Appointment
     private Integer id;
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
-    private LocalDateTime dateCreatedAt;
+    private final LocalDateTime dateCreatedAt = LocalDateTime.now();
     @Column(name="isActive",nullable = false)
     @JsonFormat
     private boolean isActive;
