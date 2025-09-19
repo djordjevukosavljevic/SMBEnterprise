@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Repository.AppointmentRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +28,12 @@ public class AppointmentService
     {
         return appointmentRepository.findById(id);
     }
+
+    public void createAppointment(Appointment appointment)
+    {
+        appointmentRepository.save(appointment);
+    }
+
 
 //    public Optional<Appointment> getAppointmentByDateCreated(LocalDateTime dateCreatedAt)
 //    {

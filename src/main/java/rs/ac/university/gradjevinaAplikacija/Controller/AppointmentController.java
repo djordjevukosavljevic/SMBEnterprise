@@ -2,10 +2,7 @@ package rs.ac.university.gradjevinaAplikacija.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Service.AppointmentService;
 
@@ -34,5 +31,11 @@ public class AppointmentController
     public Optional<Appointment> getAppointmentById(@PathVariable Integer id)
     {
         return appointmentService.getAppointmentById(id);
+    }
+
+    @PostMapping
+    public void createAppointment(@RequestBody Appointment appointment)
+    {
+        appointmentService.createAppointment(appointment);
     }
 }
