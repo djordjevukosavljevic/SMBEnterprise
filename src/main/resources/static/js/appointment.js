@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var calendarEl = document.getElementById("calendar");
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridWeek',
+        initialView: 'dayGridMonth',
         // Trying to customize from here
         themeSystem: 'bootstrap5',
         editable: true, 
