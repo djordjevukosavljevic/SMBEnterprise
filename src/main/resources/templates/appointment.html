@@ -18,9 +18,15 @@
     <div th:replace="layout/background :: background"></div>
     <div id="calendar"></div>
     <br>
-    <button type="submit" class="btn btn-info text-center" style="width: 200px; position: relative; left: 40%;">Book an
-        appointment</button>
-    <br><br>
+    <form id="bookform">
+        <div>
+            <button id="bookbtn" type="submit" class="btn btn-info text-center"
+                style="width: 200px; position: relative; left: 40%;">Book an
+                appointment</button>
+            <br><br>
+        </div>
+        <div id="status"></div>
+    </form>
     <div th:replace="layout/footer :: footer"></div>
 
 </body>

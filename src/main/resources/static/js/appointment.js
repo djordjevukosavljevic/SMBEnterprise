@@ -25,10 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         
         const form = e.target;
-        
-
-        try{
-
+        const data = 
+        {
+            dateCreated: form.dateCreated.value,
+            isactive: form.isactive.value
+        };
+        try {
+            const response = await fetch("/api/appointment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
+            
+            const text = await response.text();
+            document.getElementById("status").innerText = text;
+            window.alert("Thank you for arranging an appointment, we will contact you soon");
+            form.reset();
+            window.location.reload();
         }
         catch(err){
             document.getElementById("status").innerText = "Failed to book an appointment." + err.message;
