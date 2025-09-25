@@ -18,3 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     calendar.render();
 })
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("bookbtn").addEventListener("submit",   async function e() {
+        e.preventDefault();
+        
+        const form = e.target;
+        
+
+        try{
+
+        }
+        catch(err){
+            document.getElementById("status").innerText = "Failed to book an appointment." + err.message;
+            window.location.reload();
+        }
+    });
+});
