@@ -18,6 +18,16 @@ public class Appointment
     @JsonFormat
     @Column(name="id", nullable = false)
     private Integer id;
+
+    @Column(name = "name", nullable = false)
+    @JsonFormat
+    private String name;
+    @Column(name = "lastname", nullable = false)
+    @JsonFormat
+    private String lastname;
+    @Column(name = "mobile_number", nullable = false)
+    @JsonFormat
+    private int mobileNumber;
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private final LocalDateTime dateCreatedAt = LocalDateTime.now();
