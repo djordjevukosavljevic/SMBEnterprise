@@ -27,7 +27,7 @@ public class Appointment
     private String lastname;
     @Column(name = "mobile_number", nullable = false)
     @JsonFormat
-    private int mobileNumber;
+    private String mobileNumber;
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private final LocalDateTime dateCreatedAt = LocalDateTime.now();
