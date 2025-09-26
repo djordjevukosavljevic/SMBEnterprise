@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const text = await response.text();
             document.getElementById("status").innerText = text;
-            console.log("This should pass...");
             window.alert("Thank you for contacting us!")
             form.reset();
             window.location.reload();

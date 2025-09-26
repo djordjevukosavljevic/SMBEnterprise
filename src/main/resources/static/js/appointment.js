@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     calendar.render();
 })
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("bookbtn").addEventListener("submit",   async function e() {
+    document.getElementById("bookform").addEventListener("submit",   async function e() {
         e.preventDefault();
         
         const form = e.target;
