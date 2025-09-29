@@ -45,14 +45,24 @@ public class AppointmentController
         appointmentService.createAppointment(appointment);
     }
 
-    public void SendMail(Appointment appointment){
+    public void SendMail(Appointment appointment)
+    {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(appointment.getSubject());
         email.setTo("djorjde.vukosavljevic01@gmail.com");
     }
 
 
-    public void buildAppointmentBody()
+    public String buildAppointmentBody(Appointment a)
+    {
+        return String.format("""
+                Novi zakazan randevu Isotherm Solutions:
+                
+                Datum i vreme randevu-a: %s
+                Ime: %s
+                
+                """)
+    }
 
 
 

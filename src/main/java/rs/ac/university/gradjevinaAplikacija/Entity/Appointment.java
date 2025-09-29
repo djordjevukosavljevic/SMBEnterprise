@@ -18,7 +18,6 @@ public class Appointment
     @JsonFormat
     @Column(name="id", nullable = false)
     private Integer id;
-
     @Column(name = "name", nullable = false)
     @JsonFormat
     private String name;
