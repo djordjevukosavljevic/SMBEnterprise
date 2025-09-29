@@ -25,9 +25,18 @@ public class Appointment
     @Column(name = "lastname", nullable = false)
     @JsonFormat
     private String lastname;
+    @Column(name = "lastname", nullable = false)
+    @JsonFormat
+    private String email;
     @Column(name = "mobile_number", nullable = false)
     @JsonFormat
     private String mobileNumber;
+    @Column(name = "subject", nullable = false)
+    @JsonFormat
+    private String subject;
+    @Column(name = "message", nullable = false)
+    @JsonFormat
+    private String message;
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private final LocalDateTime dateCreatedAt = LocalDateTime.now();
@@ -38,4 +47,13 @@ public class Appointment
     @JsonFormat
     private boolean isTaken;
 
+    public Integer getId()
+    {
+        return id;
+    }
+
+    public String getSubject()
+    {
+        return subject;
+    }
 }
