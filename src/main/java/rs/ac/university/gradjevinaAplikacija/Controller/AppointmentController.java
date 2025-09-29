@@ -60,8 +60,12 @@ public class AppointmentController
                 
                 Datum i vreme randevu-a: %s
                 Ime: %s
+                Prezime: %s
+                Kontakt telefon: %s
+                Title: %s
                 
-                """)
+                Poruka: %                
+                """, a.getDateCreatedAt(), a.getName(), a.getLastname(), a.getEmail(), a.getMobileNumber(), a.getSubject(), a.getMessage());
     }
 
 

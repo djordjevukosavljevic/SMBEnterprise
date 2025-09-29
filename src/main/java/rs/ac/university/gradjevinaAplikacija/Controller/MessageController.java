@@ -77,9 +77,7 @@ public class MessageController
                 Title: %s
                 
                 Message: %s
-                """, m.getCreatedAt(),m.getName(),m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(),m.getMessage()
-
-        );
+                """, m.getCreatedAt(),m.getName(),m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(),m.getMessage());
     }
 
 

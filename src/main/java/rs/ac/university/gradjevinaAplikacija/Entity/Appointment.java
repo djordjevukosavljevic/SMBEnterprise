@@ -24,7 +24,7 @@ public class Appointment
     @Column(name = "lastname", nullable = false)
     @JsonFormat
     private String lastname;
-    @Column(name = "lastname", nullable = false)
+    @Column(name = "email", nullable = false)
     @JsonFormat
     private String email;
     @Column(name = "mobile_number", nullable = false)
@@ -46,13 +46,43 @@ public class Appointment
     @JsonFormat
     private boolean isTaken;
 
-    public Integer getId()
-    {
+    public Integer getId() {
         return id;
     }
 
-    public String getSubject()
-    {
+    public String getName() {
+        return name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public String getSubject() {
         return subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public LocalDateTime getDateCreatedAt() {
+        return dateCreatedAt;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public boolean isTaken() {
+        return isTaken;
     }
 }
