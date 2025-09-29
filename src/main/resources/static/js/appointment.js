@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         catch(err){
             document.getElementById("status").innerText = "Failed to book an appointment." + err.message;
-            window.location.reload();
         }
     });
 });
