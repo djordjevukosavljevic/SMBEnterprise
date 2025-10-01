@@ -2,12 +2,13 @@ package rs.ac.university.gradjevinaAplikacija.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Appointment;
 import rs.ac.university.gradjevinaAplikacija.Service.AppointmentService;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,6 @@ public class AppointmentController
     private final AppointmentService appointmentService;
 
     private final JavaMailSender mailSender;
-
 
     public AppointmentController(AppointmentService appointmentService, JavaMailSender mailSender)
     {
@@ -40,16 +40,27 @@ public class AppointmentController
     }
 
     @PostMapping
-    public void createAppointment(@RequestBody Appointment appointment)
+    public ResponseEntity<String> createAppointment(@RequestBody Appointment appointment)
     {
         appointmentService.createAppointment(appointment);
+        try{
+            sendAppointment(appointment);
+            return  ResponseEntity.ok("Termin za randevu uspesno zakazan %s Potvrdu podataka i termina dobicete putem e-mail adrese, hvala. %s ");
+        } catch (Error e)
+        {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Neuspesno zakazivanje termina randevu-a.");
+        }
     }
 
-    public void SendMail(Appointment appointment)
+    public void sendAppointment(Appointment appointment)
     {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(appointment.getSubject());
         email.setTo("djorjde.vukosavljevic01@gmail.com");
+        email.setText(buildAppointmentBody(appointment));
+
+        mailSender.send(email);
     }
 
 

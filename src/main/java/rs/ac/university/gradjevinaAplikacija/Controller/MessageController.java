@@ -41,9 +41,9 @@ public class MessageController
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
+        messageService.saveMessage(message);
         try
         {
-            messageService.saveMessage(message);
             sendMail(message);
             return ResponseEntity.ok("Message sent successfully...");
         } catch (Exception e)
