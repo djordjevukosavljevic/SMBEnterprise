@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
             subject: form.subject.value,
             message: form.message.value,
             dateCreated: form.dateCreated.value,
-            isactive: form.isactive.value
+            isactive: form.isactive.value,
+            istaken: form.istaken.value
         };
         try {
             const response = await fetch("/api/appointment", {
