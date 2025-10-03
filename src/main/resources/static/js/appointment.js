@@ -25,7 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const form = e.target;
         const data = 
-        {
+        {   
+            name: form.name.value,
+            lastname: form.lastname.value,
+            email: form.email.value,
+            mobileNumber: form.mobileNumber.value,
+            subject: form.subject.value,
+            message: form.message.value,
             dateCreated: form.dateCreated.value,
             isactive: form.isactive.value
         };

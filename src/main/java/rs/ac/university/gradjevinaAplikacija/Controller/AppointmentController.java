@@ -45,7 +45,7 @@ public class AppointmentController
         appointmentService.createAppointment(appointment);
         try{
             sendAppointment(appointment);
-            return  ResponseEntity.ok("Termin za randevu uspesno zakazan %s Potvrdu podataka i termina dobicete putem e-mail adrese, hvala. %s ");
+            return  ResponseEntity.ok("Termin za randevu uspesno zakazan. Potvrdu podataka i termina dobicete putem e-mail adrese, hvala.");
         } catch (Error e)
         {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -57,7 +57,8 @@ public class AppointmentController
     {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(appointment.getSubject());
-        email.setTo("djorjde.vukosavljevic01@gmail.com");
+        email.setTo("djordje.vukosavljevic01@gmail.com");
+        email.setCc("katarinavukosavljevic94@gmail.com");
         email.setText(buildAppointmentBody(appointment));
 
         mailSender.send(email);
@@ -67,15 +68,16 @@ public class AppointmentController
     public String buildAppointmentBody(Appointment a)
     {
         return String.format("""
-                Novi zakazan randevu Isotherm Solutions:
+                Novi zakazan randevu sa sajta:
                 
                 Datum i vreme randevu-a: %s
                 Ime: %s
                 Prezime: %s
-                Kontakt telefon: %s
+                Email: %s
+                Contact number: %s
                 Title: %s
                 
-                Poruka: %                
+                Message: %s
                 """, a.getDateCreatedAt(), a.getName(), a.getLastname(), a.getEmail(), a.getMobileNumber(), a.getSubject(), a.getMessage());
     }
 
