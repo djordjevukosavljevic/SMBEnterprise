@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     var calendarEl = document.getElementById("calendar");
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
+        initialView: 'listDay',
         // Trying to customize from here
         themeSystem: 'bootstrap5',
         editable: true, 
         selectable: true,
+        height: "400px",
+        width: "150px",
         customButtons: {
             bookNow: {
                 text: "Book an appointment",
