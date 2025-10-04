@@ -39,12 +39,12 @@ public class Appointment
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private final LocalDateTime dateCreatedAt = LocalDateTime.now();
-    @Column(name="isActive",nullable = false)
+    @Column(name="active",nullable = false)
     @JsonFormat
-    private boolean isActive;
-    @Column(name = "isTaken", nullable = false)
+    private boolean active = true;
+    @Column(name = "taken", nullable = false)
     @JsonFormat
-    private boolean isTaken;
+    private boolean taken = false;
 
     public Integer getId() {
         return id;
@@ -78,11 +78,11 @@ public class Appointment
         return dateCreatedAt;
     }
 
-    public boolean isActive() {
-        return isActive;
+    public boolean getActive() {
+        return active;
     }
 
-    public boolean isTaken() {
-        return isTaken;
+    public boolean getTaken() {
+        return taken;
     }
 }
