@@ -43,7 +43,7 @@ public class AppointmentController
     public ResponseEntity<String> createAppointment(@RequestBody Appointment appointment)
     {
         appointmentService.createAppointment(appointment);
-        try{
+        try {
             sendAppointment(appointment);
             return  ResponseEntity.ok("Termin za randevu uspesno zakazan. Potvrdu podataka i termina dobicete putem e-mail adrese, hvala.");
         } catch (Error e)
@@ -80,7 +80,5 @@ public class AppointmentController
                 Message: %s
                 """, a.getDateCreatedAt(), a.getName(), a.getLastname(), a.getEmail(), a.getMobileNumber(), a.getSubject(), a.getMessage());
     }
-
-
 
 }
