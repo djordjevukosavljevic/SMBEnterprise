@@ -41,3 +41,25 @@ body {
     border: none;
     box-shadow: none;
 }
+
+.p1g{
+  transform: translateX(-700px);
+}
+
+.p2g{
+  transform: translateX(700px);
+}
+
+.p3g{
+  transform: translateX(-700px);
+}
+
+.p4g{
+  transform: translateX(700px);
+}
+.p5g{
+  transform: translateX(-700px);
+}
+.p6g{
+  transform: translateX(700px);
+}
