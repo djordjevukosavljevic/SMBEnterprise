@@ -19,7 +19,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul id="item-list" class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/about"><i class="fa-solid fa-circle-info"></i> About</a>
                     </li>
@@ -31,7 +31,7 @@
                             Gallery</a>
                     </li>
                     <form class="d-flex me-3">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i> Contact us</a>
@@ -52,6 +52,24 @@
         </nav>
     </div>
 </body>
+<script>
+    const searchBox = document.getElementById("search-box");
+    const itemList = document.getElementById("item-list");
+    const items = document.getElementsByTagName("li");
+
+    searchBox.addEventListener("input", function(){
+        const query = this.value.toLowerCase();
+        console.log("(|)");
+        for(let i = 0; i < items.length; i++){
+            const itemText = items[i].textContent.toLowerCase();
+            if(itemText.includes(query)){
+                items[i].style.display = "block";
+            } else{
+                items[i].style.display = "none";
+            }
+        }
+    })
+</script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

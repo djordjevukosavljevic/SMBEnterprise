@@ -17,7 +17,8 @@ body::before {
   opacity: 0.8;
   z-index: -1;
 }
-body {
+
+.body {
   position: relative;
   z-index: -1;
   min-height: 100vh;
