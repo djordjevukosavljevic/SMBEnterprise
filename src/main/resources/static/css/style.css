@@ -43,23 +43,23 @@ body {
 }
 
 .p1g{
-  transform: translateX(-50%);
+  transform: translateX(-700px);
 }
 
 .p2g{
-  transform: translateX(50%);
+  transform: translateX(700px);
 }
 
 .p3g{
-  transform: translateX(-50%);
+  transform: translateX(-700px);
 }
 
 .p4g{
-  transform: translateX(50%);
+  transform: translateX(700px);
 }
 .p5g{
-  transform: translateX(-50%);
+  transform: translateX(-700px);
 }
 .p6g{
-  transform: translateX(50%);
+  transform: translateX(700px);
 }
