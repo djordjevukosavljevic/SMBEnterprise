@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
 
 @Entity(name="message")
@@ -75,4 +74,5 @@ public class Message
     public String getMessage() {
         return message;
     }
+
 }
