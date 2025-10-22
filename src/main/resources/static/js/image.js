@@ -17,16 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${image.name}</td>
                     <td>${image.size}</td>
                     <td>${image.extns}</td>
-                    <td>
-                        <div class="btn-group">
-                            <button class="btn btn-sm btn-primary">
-                                <i class="fa-solid fa-pen-to-square"></i> Change
-                            </button>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="fa-solid fa-trash-can"></i> Delete
-                            </button>
-                        </div>
-                    </td>
                     `;
 
                 tableBody.appendChild(row);
