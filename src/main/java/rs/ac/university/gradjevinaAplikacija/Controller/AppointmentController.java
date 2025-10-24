@@ -64,7 +64,6 @@ public class AppointmentController
         mailSender.send(email);
     }
 
-
     public String buildAppointmentBody(Appointment a)
     {
         return String.format("""
