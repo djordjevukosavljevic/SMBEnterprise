@@ -9,5 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 // your own css (create these files if missing)
 import './index.css';
 import './css/style.css';
-
 import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>)
