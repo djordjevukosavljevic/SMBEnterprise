@@ -39,6 +39,12 @@ public class AppointmentController
         return appointmentService.getAppointmentById(id);
     }
 
+    @PutMapping(path = "/{id}")
+    public Appointment updateAppointment(@RequestBody Appointment appointment)
+    {
+        return appointmentService.changeAppointment(appointment);
+    }
+
     @PostMapping
     public ResponseEntity<String> createAppointment(@RequestBody Appointment appointment)
     {

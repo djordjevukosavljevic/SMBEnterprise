@@ -34,6 +34,10 @@ public class AppointmentService
         appointmentRepository.save(appointment);
     }
 
+    public Appointment changeAppointment(Appointment appointment)
+    {
+        return appointmentRepository.save(appointment);
+    }
 
 //    public Optional<Appointment> getAppointmentByDateCreated(LocalDateTime dateCreatedAt)
 //    {

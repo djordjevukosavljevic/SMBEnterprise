@@ -63,7 +63,6 @@ public class MessageController
         mailSender.send(email);
     }
 
-
     public String buildEmailBody(Message m)
     {
         return String.format("""
