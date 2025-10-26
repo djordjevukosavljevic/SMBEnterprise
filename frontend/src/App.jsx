@@ -7,7 +7,10 @@ function App() {
     return (
         <Router>
             <Header />
+            
             <Footer />
         </Router>
     );
 }
+
+export default App;
