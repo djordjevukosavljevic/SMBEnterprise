@@ -24,7 +24,7 @@ export default function Header() {
                                 Gallery</a>
                         </li>
                         <form class="d-flex me-3">
-                            {/* <input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> */}
+                            <input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         </form>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i> Contact us</a>
@@ -37,8 +37,8 @@ export default function Header() {
                     </ul>
                     <div class="d-none d-lg-block">
                         <a href="/">
-                            {/* <img th:src="@{/images/logo.svg}" alt="logo"
-                                style="position: absolute; top: -50px; right: 10px; height: auto; width: 200px; z-index: 1;"> */}
+                            <img th:src="@{/images/logo.svg}" alt="logo"
+                                style="position: absolute; top: -50px; right: 10px; height: auto; width: 200px; z-index: 1;" />
                         </a>
                     </div>
                 </div>
