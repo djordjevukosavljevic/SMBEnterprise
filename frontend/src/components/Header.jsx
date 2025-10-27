@@ -38,7 +38,7 @@ export default function Header() {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/image">
+                        <a className="nav-link" href="/gallery">
                             <i className="fa-solid fa-images"></i> Gallery
                         </a>
                     </li>

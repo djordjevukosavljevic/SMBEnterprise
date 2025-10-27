@@ -1,18 +1,20 @@
-
+import React from "react"
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 export default function Footer() {
-    <div>
-        <footer class="footercontainer">
-            <div class="text-center">
-                ©
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa-solid fa-heart"></i> by
-                <a href="https://github.com/djordjevukosavljevic" class="font-weight-bold">zorzezorz</a>
-                for a better web.
-            </div>
-        </footer>
-    </div>
+    const currentYear = new Date().getFullYear();
+    <footer className="footercontainer text-center mt-auto py-3">
+        © {currentYear}, made with{" "}
+        <i className="fa-solid fa-heart text-danger"></i> by{" "}
+        <a
+            href="https://github.com/djordjevukosavljevic"
+            className="font-weight-bold text-decoration-none"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            zorzezorz
+        </a>{" "}
+        for a better web.
+    </footer>
 }

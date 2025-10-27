@@ -6,10 +6,10 @@ import Home from "./pages/Home"
 
 function App() {
     return (
-        <Router>
+        <div className="d-flex flex-column min-vh-100">
             <Header />
             <Footer />
-        </Router>
+        </div>
     );
 }
 
