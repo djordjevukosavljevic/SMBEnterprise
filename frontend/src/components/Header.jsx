@@ -1,104 +1,90 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../css/style.css"; // optional if you have your own styles
 
 function Header() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light px-3" style={{ position: "relative" }}>
-      {/* Brand / Home */}
-      <Link className="navbar-brand" to="/">
-        <i className="fa-solid fa-house"></i> Home
-      </Link>
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-light px-3" style={{ position: "relative" }}>
+            <a className="navbar-brand" href="/">
+                <i className="fa-solid fa-house"></i> Home
+            </a>
 
-      {/* Navbar toggle for small screens */}
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span className="navbar-toggler-icon"></span>
+            </button>
 
-      {/* Collapsible section */}
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul id="item-list" className="navbar-nav me-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/about">
-              <i className="fa-solid fa-circle-info"></i> About
-            </Link>
-          </li>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="item-list" className="navbar-nav me-auto">
+                    <li className="nav-item">
+                        <a className="nav-link" href="/about">
+                            <i className="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
 
-          <li className="nav-item">
-            <Link className="nav-link" to="/services">
-              <i className="fa-solid fa-hammer"></i> Our Services
-            </Link>
-          </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/services">
+                            <i className="fa-solid fa-hammer"></i> Our services
+                        </a>
+                    </li>
 
-          <li className="nav-item">
-            <Link className="nav-link" to="/image">
-              <i className="fa-solid fa-images"></i> Gallery
-            </Link>
-          </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/image">
+                            <i className="fa-solid fa-images"></i> Gallery
+                        </a>
+                    </li>
 
-          {/* Search bar */}
-          <form className="d-flex me-3">
-            <input
-              id="search-box"
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            //   onChange={(e) => handleSearch(e)}
-            />
-          </form>
+                    <form className="d-flex me-3">
+                        <input
+                            id="search-box"
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                    </form>
 
-          <li className="nav-item">
-            <Link className="nav-link" to="/contact">
-              <i className="fa-solid fa-address-book"></i> Contact Us
-            </Link>
-          </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/contact">
+                            <i className="fa-solid fa-address-book"></i> Contact us
+                        </a>
+                    </li>
 
-          <li className="nav-item">
-            <Link className="nav-link" to="/appointment">
-              <i className="fa-solid fa-calendar-days"></i> Appointments
-            </Link>
-          </li>
-        </ul>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/appointment">
+                            <i className="fa-solid fa-calendar-days"></i> Appointments
+                        </a>
+                    </li>
+                </ul>
 
-        {/* Logo */}
-        <div className="d-none d-lg-block">
-          <Link to="/">
-            <img
-              src="/images/logo.svg"
-              alt="logo"
-              style={{
-                position: "absolute",
-                top: "-50px",
-                right: "10px",
-                height: "auto",
-                width: "200px",
-                zIndex: 1,
-              }}
-            />
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
+                <div className="d-none d-lg-block">
+                    <a href="/">
+                        <img
+                            src="/images/logo.svg"
+                            alt="logo"
+                            style={{
+                                position: "absolute",
+                                top: "-50px",
+                                right: "10px",
+                                height: "auto",
+                                width: "200px",
+                                zIndex: 1,
+                            }}
+                        />
+                    </a>
+                </div>
+            </div>
+        </nav>
+    );
 }
-
-// 🔍 Simple search handler (optional)
-// function handleSearch(e) {
-//   const query = e.target.value.toLowerCase();
-//   const items = document.querySelectorAll("#item-list li");
-
-//   items.forEach((item) => {
-//     const text = item.textContent.toLowerCase();
-//     item.style.display = text.includes(query) ? "block" : "none";
-//   });
-// }
 
 export default Header;
