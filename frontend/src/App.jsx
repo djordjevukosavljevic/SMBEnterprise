@@ -6,8 +6,10 @@ import Home from "./pages/Home"
 
 function App() {
     return (
-        <Header />
-
+        <Router>
+            <Header />
+            <Footer />
+        </Router>
     );
 }
 

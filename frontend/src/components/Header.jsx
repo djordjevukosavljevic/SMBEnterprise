@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../css/style.css"; // optional if you have your own styles
 
-function Header() {
+export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light px-3" style={{ position: "relative" }}>
             <a className="navbar-brand" href="/">
@@ -87,4 +87,3 @@ function Header() {
     );
 }
 
-export default Header;
