@@ -69,7 +69,7 @@ function Header() {
                 <div className="d-none d-lg-block">
                     <a href="/">
                         <img
-                            src="../images/logo.png"
+                            src="../images/logo.svg"
                             alt="logo"
                             style={{
                                 position: "absolute",
