@@ -1,6 +1,6 @@
 import React from "react"
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import "../css/style.css";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
