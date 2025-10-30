@@ -6,10 +6,16 @@ import Home from "./pages/Home"
 
 function App() {
     return (
-        <div className="d-flex flex-column min-vh-100">
-            <Header />
-            <Footer />
-        </div>
+        <>
+            <div className="wallpaper"></div>
+            <div className="d-flex flex-column min-vh-100">
+                <Header />
+                <main className="flex-fill">
+                    <Home />
+                </main>
+                <Footer />
+            </div>
+        </>
     );
 }
 
