@@ -26,7 +26,7 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul id="item-list" className="navbar-nav me-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/about">
+                        <a className="nav-link" href="#about">
                             <i className="fa-solid fa-circle-info"></i> About
                         </a>
                     </li>
@@ -54,7 +54,7 @@ export default function Header() {
                     </form>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/contact">
+                        <a className="nav-link" href="#contact">
                             <i className="fa-solid fa-address-book"></i> Contact us
                         </a>
                     </li>
