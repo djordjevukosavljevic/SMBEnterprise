@@ -6,7 +6,7 @@ import "../css/style.css"; // optional if you have your own styles
 
 export default function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light px-3" style={{ position: "relative" }}>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light px-3">
             <a className="navbar-brand" href="/">
                 <i className="fa-solid fa-house"></i> Home
             </a>
@@ -32,13 +32,13 @@ export default function Header() {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/services">
+                        <a className="nav-link" href="#services">
                             <i className="fa-solid fa-hammer"></i> Our services
                         </a>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/gallery">
+                        <a className="nav-link" href="#gallery">
                             <i className="fa-solid fa-images"></i> Gallery
                         </a>
                     </li>
@@ -60,7 +60,7 @@ export default function Header() {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/appointment">
+                        <a className="nav-link" href="#appointment">
                             <i className="fa-solid fa-calendar-days"></i> Appointments
                         </a>
                     </li>
