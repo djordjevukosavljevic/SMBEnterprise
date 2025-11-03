@@ -39,6 +39,7 @@ export default function Home() {
             <div className="mt-4">
                 <a href="#services" className="btn btn-dark btn-lg mx-2">Explore Our Services</a>
                 <a href="#contact" className="btn btn-outline-dark btn-lg mx-2">Get in Touch</a>
+                <a href="#appointment" className="btn btn-outline-dark btn-lg mx-2">Book an appointment</a>
             </div>
         </section>
     );
