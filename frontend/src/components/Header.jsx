@@ -7,7 +7,7 @@ import "../css/style.css"; // optional if you have your own styles
 export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light px-3">
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="#home">
                 <i className="fa-solid fa-house"></i> Home
             </a>
 
