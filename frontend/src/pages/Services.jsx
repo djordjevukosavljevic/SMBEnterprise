@@ -3,7 +3,7 @@ import React from "react";
 export default function Services() {
     return (
         <section id="services" className="container py-5">
-            <h3 className="text-center mb-5">Our Services</h3>
+            <h2 className="text-center mb-5">Our Services</h2>
 
             <div className="text-center mb-4" style={{ fontSize: "20px" }}>
                 We provide a comprehensive range of construction services designed to meet the needs of both
