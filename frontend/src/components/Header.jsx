@@ -2,7 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "../css/style.css"; // optional if you have your own styles
+import "../css/style.css";
+
 
 export default function Header() {
     return (
@@ -42,7 +43,6 @@ export default function Header() {
                             <i className="fa-solid fa-images"></i> Gallery
                         </a>
                     </li>
-
                     <form className="d-flex me-3">
                         <input
                             id="search-box"
