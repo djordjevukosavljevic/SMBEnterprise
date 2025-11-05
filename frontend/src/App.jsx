@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Gallery from "./pages/Gallery";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Home />
                     <About />
                     <Services />
+                    <Gallery />
                     <Contact /> 
                 </main>
                 <Footer />
