@@ -4,8 +4,8 @@ export default function Home() {
     console.log("rendered home");
     return (
         <section id="home" className="container py-5 text-center">
-            <h6 className="text-uppercase text-muted mb-3">Welcome to Isotherm Construction</h6>
-            <h1 className="mb-4">Building Excellence from the Ground Up</h1>
+            <h1 className="text-uppercase text mb-3">Welcome to <b>Isotherm Construction</b></h1>
+            <h1 className="mb">Building Excellence from the Ground Up</h1>
 
             <div style={{ fontSize: "20px" }}>
                 <p>
