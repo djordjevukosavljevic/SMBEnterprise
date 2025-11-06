@@ -26,7 +26,7 @@ export default function Appoinmtent() {
                     />
 
                     <div className="text-center">
-                        <br/><button id="bookbtn" type="submit" className="btn btn-info px-4">
+                        <br/><button onClick={bookFunction()} id="bookbtn" type="submit" className="btn btn-info px-4">
                             Book <i className="fa-solid fa-envelope"></i>
                         </button>
                     </div>
