@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 // global libs
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // your own css (create these files if missing)
@@ -13,3 +13,4 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>)
+
