@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light px-3">
             <a className="navbar-brand" href="#home">
-                <i className="fa-solid fa-house-chimney"></i> Home
+                <i className="fa-solid fa-house-chimney"></i> <b>Isotherm Solutions</b>
             </a>
 
             <button
