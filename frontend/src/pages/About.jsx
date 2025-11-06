@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
     return (
         <section id="about" className="container py-5">
-            <h2 className="text-center mb-4">About Isotherm</h2>
+            <h2 className="text-center mb-4">About <b>Isotherm</b></h2>
 
             <div className="text-center mb-4" style={{ fontSize: "20px" }}>
                 Founded in 2008 in Paris, our company was built on a simple vision: to create spaces

@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction"; // enables selectable
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { bookFunction } from "../js/appointment";
+import { bookFunction } from "../js/appointment.js";
 
 export default function Appoinmtent() {
     return (
@@ -24,13 +24,13 @@ export default function Appoinmtent() {
                         selectable={true}
                         height="400px"
                     />
-
                     <div className="text-center">
-                        <br/><button onClick={bookFunction()} id="bookbtn" type="submit" className="btn btn-info px-4">
+                        <br/><button onClick={bookFunction} id="bookbtn" type="submit" className="btn btn-info px-4">
                             Book <i className="fa-solid fa-envelope"></i>
                         </button>
-                    </div>
 
+                    </div>
+                    
                 </div>
 
 
@@ -46,5 +46,7 @@ export default function Appoinmtent() {
                 </form> */}
             </div>
         </section>
+        
     );
 }
+

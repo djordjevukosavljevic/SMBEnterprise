@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Home() {
-    console.log("rendered home");
     return (
         <section id="home" className="container py-5 text-center">
             <h1 className="text-uppercase text mb-3">Welcome to <b>Isotherm Construction</b></h1>
