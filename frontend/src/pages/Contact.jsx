@@ -19,14 +19,14 @@ export default function Contact() {
         // TODO: add email submission logic here (e.g., via API)
         console.log(formData);
         alert("Message sent!");
-        window.location.href = "http://localhost:8083/#home";
+        window.location.href = "http://localhost:8083/#home"; 
     };
 
     return (
         <section id="contact" className="container py-5">
             <div className="container py-5">
                 <div className="form-control p-4" style={{ fontSize: "20px" }}>
-                    <h1 className="h3 text-center"><b>Get in touch</b></h1>
+                <h1 className="h3 text-center"><b>Get in touch</b></h1>
                     <p>
                         Whether you’re planning a new project, need a quote, or have any questions about
                         our services, don’t hesitate to contact us. Our team is ready to help you build
@@ -117,7 +117,7 @@ export default function Contact() {
                         </div>
 
                         <div className="text-center">
-                            <button type="submit" className="btn btn-dark btn-lg btn mx-2">
+                            <button type="submit" className="btn btn-outline-dark btn-lg mx-2">
                                 Send <i className="fa-solid fa-envelope"></i>
                             </button>
                         </div>
