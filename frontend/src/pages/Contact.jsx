@@ -19,6 +19,7 @@ export default function Contact() {
         // TODO: add email submission logic here (e.g., via API)
         console.log(formData);
         alert("Message sent!");
+        window.location.href = "http://localhost:8083/#home"; 
     };
 
     return (
