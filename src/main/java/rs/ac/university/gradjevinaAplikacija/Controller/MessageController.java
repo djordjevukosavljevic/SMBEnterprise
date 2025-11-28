@@ -38,6 +38,13 @@ public class MessageController
         return messageService.getMessageById(id);
     }
 
+    @DeleteMapping(path = "/{id}")
+    public void deleteMessageById(@PathVariable Integer id)
+    {
+        messageService.deleteById(id);
+    }
+
+
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
