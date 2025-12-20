@@ -64,3 +64,43 @@ body::before {
 .p6g{
   transform: translateX(700px);
 }
+
+/* Make form container transparent */
+#contactForm,
+#contactForm .row,
+#contactForm .col,
+#contactForm .form-group {
+    background: transparent !important;
+}
+
+/* Inputs & textarea */
+#contactForm .form-control {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* optional */
+    color: #fff; /* text color */
+    box-shadow: none !important;
+}
+
+/* Placeholder text */
+#contactForm .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus state */
+#contactForm .form-control:focus {
+    background-color: transparent;
+    border-color: #0dcaf0; /* Bootstrap info color */
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Textarea resize control */
+#contactForm textarea {
+    resize: none;
+}
+
+/* Button transparency (optional) */
+#contactForm .btn-info {
+    background-color: rgba(13, 202, 240, 0.8);
+    border: none;
+}
