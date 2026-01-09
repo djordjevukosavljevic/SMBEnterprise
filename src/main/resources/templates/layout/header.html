@@ -57,6 +57,8 @@
     const itemList = document.getElementById("item-list");
     const items = document.getElementsByTagName("li");
 
+
+    // Inside here is as sorting algorithm for filtering items for search, it does not work well and needs to be optimized!!!
     searchBox.addEventListener("input", function(){
         const query = this.value.toLowerCase();
         console.log("(|)");

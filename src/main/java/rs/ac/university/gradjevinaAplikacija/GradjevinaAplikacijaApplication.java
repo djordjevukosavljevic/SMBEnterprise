@@ -11,5 +11,5 @@ public class GradjevinaAplikacijaApplication
 	{
 		SpringApplication.run(GradjevinaAplikacijaApplication.class, args);
 	}
-	
+ 	
 }

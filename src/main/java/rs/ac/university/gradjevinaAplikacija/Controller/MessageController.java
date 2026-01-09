@@ -11,6 +11,7 @@ import rs.ac.university.gradjevinaAplikacija.Service.MessageService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:8083")
 @RestController
 @RequestMapping(path="/api/message")
 public class MessageController
