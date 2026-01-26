@@ -36,7 +36,8 @@ export default function Appointment() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8082/api/appointment", {
+        console.log("Sending appointment data", formData);
+        const response = await fetch("http://localhost:8082/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
