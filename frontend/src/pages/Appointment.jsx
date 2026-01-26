@@ -66,7 +66,7 @@ export default function Appointment() {
 
   return (
     <section id="appointment" className="container py-5">
-      <h2 className="text-center mb-4 text-white">Book an Appointment</h2>
+      <h2 className="text-center mb-4 text-black">Book an Appointment</h2>
 
       {/* Form Card */}
       <div
