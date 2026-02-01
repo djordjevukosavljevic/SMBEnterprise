@@ -16,7 +16,8 @@ export default function Appointment() {
     mobileNumber: "",
     subject: "",
     message: "",
-    datecreated: "",
+    dateCreatedAt: "",
+    dateCreatedFor:"",
     isActive: true,
     isTaken: false,
   };
@@ -28,7 +29,7 @@ export default function Appointment() {
   // Handle booking submission
   const handleBook = async () => {
     if (loading) return;
-    if (!formData.datecreated) {
+    if (!formData.dateCreatedFor) {
       alert("Please select a date first!");
       return;
     }
@@ -60,7 +61,7 @@ export default function Appointment() {
 
   // Handle date selection from calendar
   const handleDateSelect = (info) => {
-    setFormData((prev) => ({ ...prev, datecreated: info.startStr }));
+    setFormData((prev) => ({ ...prev, dateCreatedFor: info.startStr }));
     setShowModal(false);
   };
 
@@ -80,8 +81,8 @@ export default function Appointment() {
             size="lg"
             onClick={() => setShowModal(true)}
           >
-            {formData.datecreated
-              ? `Selected Date: ${formData.datecreated}`
+            {formData.dateCreatedFor
+              ? `Selected Date: ${formData.dateCreatedFor}`
               : "Select Date"}
             <i className="fa-solid fa-calendar-days ms-2"></i>
           </Button>

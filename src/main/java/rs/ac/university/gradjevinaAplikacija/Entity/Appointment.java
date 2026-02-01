@@ -39,6 +39,9 @@ public class Appointment
     @Column(name="dateCreatedAt", nullable = false)
     @JsonFormat
     private final LocalDateTime dateCreatedAt = LocalDateTime.now();
+    @Column(name="dateCreatedFor", nullable = false)
+    @JsonFormat
+    private LocalDateTime dateCreatedFor;
     @Column(name="active",nullable = false)
     @JsonFormat
     private boolean active = true;
@@ -74,8 +77,14 @@ public class Appointment
         return message;
     }
 
-    public LocalDateTime getDateCreatedAt() {
+    public LocalDateTime getDateCreatedAt()
+    {
         return dateCreatedAt;
+    }
+
+    public LocalDateTime getDateCreatedFor()
+    {
+        return dateCreatedFor;
     }
 
     public boolean getActive() {
