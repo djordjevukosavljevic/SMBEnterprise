@@ -6,15 +6,15 @@ export default function About() {
     const ref2 = useRef(null);
     const ref3 = useRef(null);
 
-    // Scroll per paragraph
     const scroll1 = useScroll({ target: ref1, offset: ["start end", "center center"] });
     const scroll2 = useScroll({ target: ref2, offset: ["start end", "center center"] });
     const scroll3 = useScroll({ target: ref3, offset: ["start end", "center center"] });
 
-    // Map x to scroll, with spring for smoother motion
-    const x1 = useSpring(useTransform(scroll1.scrollYProgress, [0, 1], ["-100vw", "0vw"]), { damping: 20, stiffness: 120 });
-    const x2 = useSpring(useTransform(scroll2.scrollYProgress, [0, 1], ["100vw", "0vw"]), { damping: 20, stiffness: 120 });
-    const x3 = useSpring(useTransform(scroll3.scrollYProgress, [0, 1], ["-100vw", "0vw"]), { damping: 20, stiffness: 120 });
+    const springConfig = { damping: 15, stiffness: 180 };
+
+    const x1 = useSpring(useTransform(scroll1.scrollYProgress, [0, 0.8], ["-100vw", "0vw"]), springConfig);
+    const x2 = useSpring(useTransform(scroll2.scrollYProgress, [0, 0.8], ["100vw", "0vw"]), springConfig);
+    const x3 = useSpring(useTransform(scroll3.scrollYProgress, [0, 0.8], ["-100vw", "0vw"]), springConfig);
 
     const opacity1 = useTransform(scroll1.scrollYProgress, [0, 0.7], [0, 1]);
     const opacity2 = useTransform(scroll2.scrollYProgress, [0, 0.7], [0, 1]);
@@ -30,7 +30,14 @@ export default function About() {
 
     return (
         <section id="about" className="container py-5">
-            <h2 style={{ fontSize: "clamp(32px, 8vw, 64px)", fontWeight: "900", textAlign: "center", marginBottom: "6rem" }}>
+            <h2
+                style={{
+                    fontSize: "clamp(32px, 8vw, 64px)",
+                    fontWeight: "900",
+                    textAlign: "center",
+                    marginBottom: "6rem",
+                }}
+            >
                 About <b>Isotherm</b>
             </h2>
 
