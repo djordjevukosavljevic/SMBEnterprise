@@ -1,30 +1,25 @@
-import React from "react";
-import ScrollText from "./ScrollText";
+// ScrollText.jsx
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-export default function About() {
+export default function ScrollText({ children, direction = "left" }) {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"],
+    });
+
+    const x = useTransform(
+        scrollYProgress,
+        [0, 0.5, 1],
+        direction === "left" ? [-120, 0, -120] : [120, 0, 120]
+    );
+
+    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7], [0, 1, 1]);
+
     return (
-        <section id="about" className="container py-5">
-            <h2 className="text-center mb-5" style={{ fontSize: "36px" }}>
-                About <b>Isotherm</b>
-            </h2>
-
-            <div className="text-center mb-5">
-                <ScrollText direction="left">
-                    We create spaces that combine strength, beauty, and functionality.
-                </ScrollText>
-            </div>
-
-            <div className="text-center mb-5">
-                <ScrollText direction="right">
-                    From homes to commercial buildings, every project reflects precision and care.
-                </ScrollText>
-            </div>
-
-            <div className="text-center mb-5">
-                <ScrollText direction="left">
-                    Innovation, sustainability, and timeless design guide everything we build.
-                </ScrollText>
-            </div>
-        </section>
+        <motion.div ref={ref} style={{ x, opacity }}>
+            {children}
+        </motion.div>
     );
 }

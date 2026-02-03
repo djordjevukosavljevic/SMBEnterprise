@@ -13,15 +13,15 @@ export default function Contact() {
     const [formData, setFormData] = useState(initialState);
     const [loading, setLoading] = useState(false);
 
-    const [toast, setToast] = useState({show: false, menubar: "", type: ""});
+    const [toast, setToast] = useState({ show: false, menubar: "", type: "" });
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const showToast = (message, type = "success") => {
-        setToast({show: true, message, type});
-        setTimeout(() =>  setToast({show: false, message: "", type: "" }), 3000);
+        setToast({ show: true, message, type });
+        setTimeout(() => setToast({ show: false, message: "", type: "" }), 3000);
     }
 
     const handleSubmit = async (e) => {
@@ -45,12 +45,19 @@ export default function Contact() {
 
             setFormData(initialState);
 
+            // adding showToast 
+            showToast("Message sent! Thank you for reaching out, our team will contact you as soon as possible.",
+                "success",
+                7000
+            );
 
             alert(
                 "Message sent! Thank you for contacting! Our team will get back to you as soon as possible."
             );
 
-            window.location.href = "http://localhost:8083/#home";
+            setTimeout(() => {
+                window.location.href = "http://localhost:8083/#home";
+            }, 1500);
         } catch (error) {
             alert("Error sending message, we will resolve this issue asap.");
             window.location.href = "http://localhost:8083/#home";
@@ -173,8 +180,28 @@ export default function Contact() {
                             </button>
                         </div>
                     </form>
+                    {toast.show && (
+                        <div
+                            style={{
+                                position: "fixed", // <<< fixed to top of screen
+                                top: toast.show ? "20px" : "-100px", // <<< slide animation
+                                left: "50%",
+                                transform: "translateX(-50%)",
+                                padding: "15px 25px",
+                                backgroundColor: toast.type === "success" ? "#4BB543" : "#FF3333",
+                                color: "#fff",
+                                borderRadius: "8px",
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                                zIndex: 9999,
+                                transition: "top 0.5s ease, opacity 0.5s ease",
+                                opacity: toast.show ? 1 : 0,
+                            }}
+                        >
+                            {toast.message}
+                        </div>
+                    )}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
