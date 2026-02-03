@@ -43,7 +43,7 @@ export default function Contact() {
 
             window.location.href = "http://localhost:8083/#home";
         } catch (error) {
-            alert("Error sending message");
+            alert("Error sending message, we will resolve this issue asap.");
             window.location.href = "http://localhost:8083/#home";
             console.error(error);
         } finally {
