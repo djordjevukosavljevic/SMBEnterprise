@@ -183,23 +183,23 @@ export default function Contact() {
                     {toast.show && (
                         <div
                             style={{
-                                position: "fixed", // <<< fixed to top of screen
-                                top: toast.show ? "20px" : "-100px", // <<< slide animation
-                                left: "50%",
-                                transform: "translateX(-50%)",
-                                padding: "15px 25px",
-                                backgroundColor: toast.type === "success" ? "#4BB543" : "#FF3333",
-                                color: "#fff",
-                                borderRadius: "8px",
-                                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-                                zIndex: 9999,
-                                transition: "top 0.5s ease, opacity 0.5s ease",
+                                marginTop: "15px",
+                                padding: "12px 18px",
+                                backgroundColor: toast.type === "success" ? "#d4edda" : "#f8d7da",
+                                color: toast.type === "success" ? "#155724" : "#721c24",
+                                border: `1px solid ${toast.type === "success" ? "#c3e6cb" : "#f5c6cb"}`,
+                                borderRadius: "5px",
+                                fontWeight: "500",
+                                textAlign: "center",
                                 opacity: toast.show ? 1 : 0,
+                                transition: "opacity 0.5s ease, transform 0.5s ease",
+                                transform: toast.show ? "translateY(0)" : "translateY(-20px)",
                             }}
                         >
                             {toast.message}
                         </div>
                     )}
+
                 </div>
             </div>
         </section >
