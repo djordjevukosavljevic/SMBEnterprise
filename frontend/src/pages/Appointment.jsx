@@ -17,7 +17,7 @@ export default function Appointment() {
     subject: "",
     message: "",
     dateCreatedAt: "",
-    dateCreatedFor:"",
+    dateCreatedFor: "",
     isActive: true,
     isTaken: false,
   };
@@ -26,19 +26,28 @@ export default function Appointment() {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  // <<< NEW: toast state
+  const [toast, setToast] = useState({ show: false, message: "", type: "" });
+
+  // <<< NEW: show toast function
+  const showToast = (message, type = "success", duration = 5000) => {
+    setToast({ show: true, message, type });
+    setTimeout(() => setToast({ show: false, message: "", type: "" }), duration);
+  };
+
   // Handle booking submission
   const handleBook = async () => {
     if (loading) return;
     if (!formData.dateCreatedFor) {
-      alert("Please select a date first!");
+      showToast("Please select a date first!", "error");
       return;
     }
 
     setLoading(true);
 
     try {
-        console.log("Sending appointment data", formData);
-        const response = await fetch("http://localhost:8082/api/appointment", {
+      console.log("Sending appointment data", formData);
+      const response = await fetch("http://localhost:8082/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -46,14 +55,22 @@ export default function Appointment() {
 
       if (!response.ok) throw new Error("Booking failed");
 
-      alert("Appointment booked successfully!");
       setFormData(initialState);
-      window.location.href = "http://localhost:8083/#home";
+      showToast("Appointment booked successfully!", "success");
+
+      // Redirect after short delay to allow toast to show
+      setTimeout(() => {
+        window.location.href = "http://localhost:8083/#home";
+      }, 2000);
+
     } catch (error) {
-      alert("Error booking appointment.");
-      alert("Get in touch for now...");
-      window.location.href = "http://localhost:8083/#contact";
       console.error(error);
+      showToast("Error booking appointment. Please get in touch.", "error");
+
+      setTimeout(() => {
+        window.location.href = "http://localhost:8083/#contact";
+      }, 2500);
+
     } finally {
       setLoading(false);
     }
@@ -72,7 +89,7 @@ export default function Appointment() {
       {/* Form Card */}
       <div
         className="card shadow-lg p-4 mb-5"
-        style={{ backgroundColor: "rgba(255,255,255,0.9)", borderRadius: "15px" }}
+        style={{ backgroundColor: "rgba(255,255,255,0.9)", borderRadius: "15px", position: "relative" }} // <<< added relative for toast
       >
         {/* Select Date Button */}
         <div className="mb-3 text-center">
@@ -180,11 +197,32 @@ export default function Appointment() {
               </>
             ) : (
               <>
-                 Schedule<i className="fa-solid fa-calendar-check ms-2"></i>
+                Schedule<i className="fa-solid fa-calendar-check ms-2"></i>
               </>
             )}
           </Button>
         </div>
+
+        {/* <<< NEW: inline toast notification */}
+        {toast.show && (
+          <div
+            style={{
+              marginTop: "15px",
+              padding: "12px 18px",
+              backgroundColor: toast.type === "success" ? "#d4edda" : "#f8d7da",
+              color: toast.type === "success" ? "#155724" : "#721c24",
+              border: `1px solid ${toast.type === "success" ? "#c3e6cb" : "#f5c6cb"}`,
+              borderRadius: "5px",
+              fontWeight: "500",
+              textAlign: "center",
+              opacity: toast.show ? 1 : 0,
+              transition: "opacity 0.5s ease, transform 0.5s ease",
+              transform: toast.show ? "translateY(0)" : "translateY(-10px)",
+            }}
+          >
+            {toast.message}
+          </div>
+        )}
       </div>
 
       {/* Calendar Modal */}
