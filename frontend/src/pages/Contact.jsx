@@ -13,9 +13,16 @@ export default function Contact() {
     const [formData, setFormData] = useState(initialState);
     const [loading, setLoading] = useState(false);
 
+    const [toast, setToast] = useState({show: false, menubar: "", type: ""});
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
+    const showToast = (message, type = "success") => {
+        setToast({show: true, message, type});
+        setTimeout(() =>  setToast({show: false, message: "", type: "" }), 3000);
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,6 +44,8 @@ export default function Contact() {
             }
 
             setFormData(initialState);
+
+
             alert(
                 "Message sent! Thank you for contacting! Our team will get back to you as soon as possible."
             );
