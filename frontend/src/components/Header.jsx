@@ -23,9 +23,18 @@ export default function Header() {
             >
                 <span className="navbar-toggler-icon"></span>
             </button>
-
+            <br></br>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul id="item-list" className="navbar-nav me-auto">
+                    <form className="d-flex me-3">
+                        <input
+                            id="search-box"
+                            className="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                    </form>
                     <li className="nav-item">
                         <a className="nav-link" href="#about">
                             <i className="fa-solid fa-circle-info"></i> About
@@ -43,15 +52,7 @@ export default function Header() {
                             <i className="fa-solid fa-images"></i> Gallery
                         </a>
                     </li>
-                    <form className="d-flex me-3">
-                        <input
-                            id="search-box"
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                    </form>
+
 
                     <li className="nav-item">
                         <a className="nav-link" href="#contact">
