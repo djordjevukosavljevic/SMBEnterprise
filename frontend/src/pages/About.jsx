@@ -21,7 +21,7 @@ export default function About() {
     const opacity3 = useTransform(scroll3.scrollYProgress, [0, 0.7], [0, 1]);
 
     const paragraphStyle = {
-        fontSize: "clamp(24px, 6vw, 48px)",
+        fontSize: "clamp(24px, 6vw, 32px)",
         fontWeight: "900",
         lineHeight: "1.5",
         textAlign: "center",
@@ -32,7 +32,7 @@ export default function About() {
         <section id="about" className="container py-5">
             <h2
                 style={{
-                    fontSize: "clamp(32px, 8vw, 64px)",
+                    fontSize: "clamp(32px, 8vw, 32px)",
                     fontWeight: "900",
                     textAlign: "center",
                     marginBottom: "6rem",
