@@ -11,14 +11,14 @@ export default function Home() {
       transition={{ duration: 0.8 }}
     >
       <h1
-        style={{ fontSize: "clamp(40px, 6vw, 72px)" }}
+        style={{ fontSize: "clamp(34px, 6vw, 72px)" }}
         className="text-uppercase mb-3"
       >
         Welcome to <b>Isotherm Construction</b>
       </h1>
 
       <h2
-        style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
+        style={{ fontSize: "clamp(22px, 4.5vw, 48px)" }}
         className="mb-5"
       >
         Building Excellence from the Ground Up
