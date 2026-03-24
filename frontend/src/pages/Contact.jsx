@@ -31,7 +31,7 @@ export default function Contact() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://192.168.1.2:8082/api/message", {
+            const response = await fetch("http://192.168.1.95:8082/api/message", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

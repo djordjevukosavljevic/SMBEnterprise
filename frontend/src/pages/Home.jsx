@@ -14,7 +14,7 @@ export default function Home() {
         style={{ fontSize: "clamp(34px, 6vw, 72px)" }}
         className="text-uppercase mb-3"
       >
-        Welcome to <b>Isotherm Construction</b>
+        Welcome to <b>Isotherm Solutions</b>
       </h1>
 
       <h2
@@ -34,7 +34,7 @@ export default function Home() {
         }}
       >
         <p>
-          At Isotherm Construction, we believe every project begins with a vision — a unique idea
+          At Isotherm Solutions, we believe every project begins with a vision — a unique idea
           that deserves to be brought to life with care, precision, and expertise. Since our founding,
           we’ve dedicated ourselves to building spaces that reflect both form and function, ensuring
           every structure we create stands the test of time.
