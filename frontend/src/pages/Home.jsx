@@ -14,6 +14,7 @@ export default function Home() {
         style={{ fontSize: "clamp(34px, 6vw, 72px)" }}
         className="text-uppercase mb-3"
       >
+        <br></br>
         Welcome to <b>Isotherm Solutions</b>
       </h1>
 

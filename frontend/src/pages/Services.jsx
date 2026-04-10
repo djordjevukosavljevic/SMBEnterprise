@@ -80,37 +80,37 @@ export default function Services() {
       <div className="row g-5">
         <div className="col-md-6">
           <motion.div ref={card1Ref} style={{ x: card1X, opacity: card1Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🏗️ <b>Residential Construction</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>Residential Construction</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>From the ground up, we build beautiful, durable homes tailored to your lifestyle and vision.</p>
           </motion.div>
         </div>
         <div className="col-md-6">
           <motion.div ref={card2Ref} style={{ x: card2X, opacity: card2Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🏢 <b>Commercial Construction</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>Commercial Construction</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>We create spaces that support your business goals — on time and within budget.</p>
           </motion.div>
         </div>
         <div className="col-md-6">
           <motion.div ref={card3Ref} style={{ x: card3X, opacity: card3Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🛠️ <b>General Contracting</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>General Contracting</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>We manage all aspects of the construction process — coordinating labor, materials, schedules, and budgets.</p>
           </motion.div>
         </div>
         <div className="col-md-6">
           <motion.div ref={card4Ref} style={{ x: card4X, opacity: card4Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🌍 <b>Design & Build</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>Design & Build</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>We combine architecture, engineering, and construction into a single seamless service.</p>
           </motion.div>
         </div>
         <div className="col-md-6" >
           <motion.div ref={card5Ref} style={{ x: card5X, opacity: card5Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🚧 <b>Site Preparation & Groundwork</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>Site Preparation & Groundwork</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>Excavation, grading, drainage, and all groundwork to prepare your site for safe and efficient construction.</p>
           </motion.div>
         </div>
         <div className="col-md-6">
           <motion.div ref={card6Ref} style={{ x: card6X, opacity: card6Opacity }}>
-            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>🔧 <b>Maintenance & Repairs</b></h5>
+            <h5 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}> <b>Maintenance & Repairs</b></h5>
             <p style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700 }}>Timely repairs and ongoing maintenance solutions to keep your property safe and valuable.</p>
           </motion.div>
         </div>

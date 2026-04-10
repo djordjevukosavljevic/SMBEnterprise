@@ -10,6 +10,7 @@ export default function Contact() {
         message: "",
     };
 
+
     const [formData, setFormData] = useState(initialState);
     const [loading, setLoading] = useState(false);
 
@@ -31,7 +32,7 @@ export default function Contact() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://192.168.1.95:8082/api/message", {
+            const response = await fetch("http://localhost:8082/api/message", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

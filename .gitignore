@@ -36,3 +36,6 @@ build/
 #Ignore Spring Boot application properties
 application.properties
 application.yml
+
+#Ignore Configuration class
+/src/main/java/rs.ac.university.gradjevinaAplikacija/Configuration/CorsConfig.java
