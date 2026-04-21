@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Appoinmtent from "./pages/Appointment";
+import Reviews from "./pages/Reviews";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Gallery />
                     <Contact /> 
                     <Appoinmtent />
+                    <Reviews />
                 </main>
                 <Footer />
             </div>

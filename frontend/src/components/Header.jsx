@@ -26,7 +26,7 @@ export default function Header() {
             <br></br>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul id="item-list" className="navbar-nav me-auto">
-                    <li className="nav-item">
+                     <li className="nav-item">
                         <a className="nav-link" href="#about">
                             <i className="fa-solid fa-circle-info"></i> About
                         </a>
@@ -54,6 +54,11 @@ export default function Header() {
                     <li className="nav-item">
                         <a className="nav-link" href="#appointment">
                             <i className="fa-solid fa-calendar-days"></i> Appointments
+                        </a>
+                    </li>
+                    <li className="nav-item"> 
+                        <a className="nav-link" href="#reviews">
+                            <i class="fa-solid fa-star-half-stroke"></i>Reviews
                         </a>
                     </li>
                 </ul>

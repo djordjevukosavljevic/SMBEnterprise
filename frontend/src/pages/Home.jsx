@@ -72,6 +72,9 @@ export default function Home() {
         <a href="#appointment" className="btn btn-outline-dark btn-lg px-5 py-3">
           Book an Appointment
         </a>
+        <a href="#reviews" className="btn btn-outline-dark btn-lg px-5 py-3">
+          See our grades
+        </a>
       </div>
     </motion.section>
   );
