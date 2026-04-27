@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class Review
 {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -26,5 +27,5 @@ public class Review
     @Column(name = "grade", nullable = false)
     @JsonFormat
     private double grade;
-    
+
 }
