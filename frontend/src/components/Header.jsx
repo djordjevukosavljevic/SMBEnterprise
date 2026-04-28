@@ -58,7 +58,7 @@ export default function Header() {
                     </li>
                     <li className="nav-item"> 
                         <a className="nav-link" href="#reviews">
-                            <i class="fa-solid fa-star-half-stroke"></i>Reviews
+                            <i class="fa-solid fa-star-half-stroke"></i>Testimonials
                         </a>
                     </li>
                 </ul>
