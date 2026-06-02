@@ -75,7 +75,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-			<version>3.4.3</version>
+			<version>3.4.13</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>

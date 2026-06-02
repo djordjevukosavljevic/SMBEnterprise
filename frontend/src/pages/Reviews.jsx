@@ -126,6 +126,34 @@ export default function Reviews() {
                     ad velit ab hic tenetur.
                 </p>
             </motion.div>
+
+            <motion.div ref={ref2} style={{ ...paragraphStyle, x: x2, opacity: opacity2 }}>
+                <h5 class="font-weight-bold">Mr Peker</h5>
+                <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+                <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                        <i class="fas fa-star fa-sm text-info"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star fa-sm text-info"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star fa-sm text-info"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star fa-sm text-info"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                    </li>
+                </ul>
+                <p class="mb-2">
+                    <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                    ad velit ab hic tenetur.
+                </p>
+            </motion.div>
+
         </section>
     );
 }

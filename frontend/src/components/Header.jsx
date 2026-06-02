@@ -62,7 +62,7 @@ export default function Header() {
                         </a>
                     </li>
                 </ul>
-{/* 
+
                 <div className="d-none d-lg-block">
                     <a href="/">
                         <img
@@ -78,7 +78,7 @@ export default function Header() {
                             }}
                         />
                     </a>
-                </div> */}
+                </div>
             </div>
         </nav>
     );

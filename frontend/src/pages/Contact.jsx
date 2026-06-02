@@ -32,7 +32,8 @@ export default function Contact() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:8082/api/message", {
+            console.log(formData);
+            const response = await fetch("http://localhost:8083/api/message", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -57,11 +58,11 @@ export default function Contact() {
             );
 
             setTimeout(() => {
-                window.location.href = "http://localhost:8083/#home";
+                window.location.href = "http://localhost:3000/#home";
             }, 1500);
         } catch (error) {
             alert("Error sending message, we will resolve this issue asap.");
-            window.location.href = "http://localhost:8083/#home";
+            window.location.href = "http://localhost:3000/#home";
             console.error(error);
         } finally {
             setLoading(false);

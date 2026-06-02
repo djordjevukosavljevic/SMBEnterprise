@@ -17,11 +17,11 @@ import java.util.Optional;
 @RequestMapping(path = "/api/appointment")
 public class AppointmentController
 {
-    @Autowired
     private final AppointmentService appointmentService;
 
     private final JavaMailSender mailSender;
 
+    @Autowired
     public AppointmentController(AppointmentService appointmentService, JavaMailSender mailSender)
     {
         this.appointmentService = appointmentService;
