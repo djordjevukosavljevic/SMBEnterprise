@@ -58,12 +58,12 @@ export default function Contact() {
             );
 
             setTimeout(() => {
-                window.location.href = "http://localhost:3000/#home";
+                window.location.href = "http://localhost:8084/#home";
             }, 1500);
         } catch (error) {
             alert("Error sending message, we will resolve this issue asap.");
-            window.location.href = "http://localhost:3000/#home";
-            console.error(error);
+            window.location.href = "http://localhost:8084/#home";
+            console.log(error);
         } finally {
             setLoading(false);
         }
