@@ -20,7 +20,7 @@ public class Message
     private Integer id;
 
     @Column(name="createdAt", nullable = false)
-    @JsonFormat
+    @JsonFormat()
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name="name", nullable = false)
