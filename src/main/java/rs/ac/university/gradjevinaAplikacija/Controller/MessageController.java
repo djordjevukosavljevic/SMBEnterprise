@@ -50,6 +50,8 @@ public class MessageController
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
         messageService.saveMessage(message);
+        System.out.println("poruka pre smtpa");
+        System.out.println(message.getCreatedAt());
         try
         {
             sendMail(message);

@@ -51,11 +51,7 @@ export default function Header() {
                         </a>
                     </li>
 
-                    <li className="nav-item">
-                        <a className="nav-link" href="#appointment">
-                            <i className="fa-solid fa-calendar-days"></i> Appointments
-                        </a>
-                    </li>
+                  
                     <li className="nav-item"> 
                         <a className="nav-link" href="#reviews">
                             <i class="fa-solid fa-star-half-stroke"></i>Testimonials
@@ -77,6 +73,7 @@ export default function Header() {
                                 zIndex: 1,
                             }}
                         />
+
                     </a>
                 </div>
             </div>

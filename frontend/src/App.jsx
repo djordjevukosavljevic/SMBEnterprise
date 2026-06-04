@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
-import Appoinmtent from "./pages/Appointment";
 import Reviews from "./pages/Reviews";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
                     <Services />
                     <Gallery />
                     <Contact /> 
-                    <Appoinmtent />
                     <Reviews />
                 </main>
                 <Footer />
