@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pages")
+@RequestMapping
 public class ViewController
 {
-    @GetMapping
+    @GetMapping(path=("/#vision"))
     public String vision()
     {
         return "vision";
