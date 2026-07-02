@@ -20,6 +20,11 @@ public class ReviewService
 
     public List<Review> findAllReviews()
     {
-        return reviewRepository .findAll();
+        return reviewRepository.findAll();
+    }
+
+    public void createReveiw(Review review)
+    {
+        reviewRepository.save(review);
     }
 }
