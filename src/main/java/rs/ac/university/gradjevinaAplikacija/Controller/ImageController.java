@@ -24,6 +24,15 @@ public class ImageController
     @PostMapping
     public void uploadImage(@RequestBody Image image)
     {
+        if(image.getPath() == null || image.getPath().isEmpty())
+        {
+            System.out.println("Invalid path.");
+        }
+
+        if(image.getSize() > 5000)
+        {
+            System.out.println("Image size is too large");
+        }
         service.uploadImage(image);
     }
 
