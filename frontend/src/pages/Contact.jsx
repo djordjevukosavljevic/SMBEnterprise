@@ -5,7 +5,7 @@ export default function Contact() {
         name: "",
         lastname: "",
         email: "",
-        mobile_number: "",
+        mobileNumber: "",
         subject: "",
         message: "",
     };
@@ -33,7 +33,7 @@ export default function Contact() {
 
         try {
             console.log(formData);
-            const response = await fetch("http://localhost:8083/api/message", {
+            const response = await fetch("http://127.0.0.1:8083/api/message", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export default function Contact() {
             }, 1500);
         } catch (error) {
             alert("Error sending message, we will resolve this issue asap.");
-            window.location.href = "http://localhost:8084/#home";
+            window.location.href = "http://127.0.0.1:8084/#home";
             console.log(error);
         } finally {
             setLoading(false);
