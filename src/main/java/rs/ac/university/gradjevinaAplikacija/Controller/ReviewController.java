@@ -32,6 +32,12 @@ public class ReviewController {
         {
             throw new IllegalArgumentException("Grade must be between 1 and 5");
         }
+
+
+        if(review.getComment().contains("fuck") || review.getComment().contains("shit") || review.getComment().contains("stupid"))
+        {
+            throw new IllegalArgumentException("No swearing please.");
+        }
         reviewService.createReveiw(review);
     }
 

@@ -1,6 +1,7 @@
 package rs.ac.university.gradjevinaAplikacija.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Image;
 import rs.ac.university.gradjevinaAplikacija.Service.ImageService;
@@ -24,15 +25,15 @@ public class ImageController
     @PostMapping
     public void uploadImage(@RequestBody Image image)
     {
-        if(image.getPath() == null || image.getPath().isEmpty())
-        {
-            System.out.println("Invalid path.");
-        }
-
-        if(image.getSize() > 5000)
-        {
-            System.out.println("Image size is too large");
-        }
+//        if(image.getPath() == null || image.getPath().isEmpty())
+//        {
+//            return ResponseEntity.badRequest().body("Invalid path - cannot be empty");
+//        }
+//
+//        if(image.getSize() > 5000)
+//        {
+//
+//        }
         service.uploadImage(image);
     }
 

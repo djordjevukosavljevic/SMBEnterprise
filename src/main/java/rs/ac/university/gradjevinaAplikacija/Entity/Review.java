@@ -12,7 +12,6 @@ import lombok.Setter;
 @Setter
 public class Review
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
