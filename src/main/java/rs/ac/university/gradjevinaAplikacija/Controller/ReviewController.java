@@ -2,7 +2,6 @@ package rs.ac.university.gradjevinaAplikacija.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.stylesheets.LinkStyle;
 import rs.ac.university.gradjevinaAplikacija.Entity.Review;
 import rs.ac.university.gradjevinaAplikacija.Service.ReviewService;
 
@@ -28,16 +27,30 @@ public class ReviewController {
     @PostMapping
     public void createReview(@RequestBody Review review)
     {
+        List<String> forbiddenWords = List.of(
+        "cunt",
+        "shit",
+        "stupid",
+        "fuck",
+        "cheat",
+        "cheater",
+        "fraud"
+        );
         if(review.getGrade() < 1 || review.getGrade() > 5)
         {
             throw new IllegalArgumentException("Grade must be between 1 and 5");
         }
 
+        String comment = review.getComment().toLowerCase();
 
-        if(review.getComment().contains("fuck") || review.getComment().contains("shit") || review.getComment().contains("stupid"))
+        for(String word: forbiddenWords)
         {
-            throw new IllegalArgumentException("No swearing please.");
+            if(comment.contains(word))
+            {
+                throw new IllegalArgumentException("Comment cannot contain bad words");
+            }
         }
+
         reviewService.createReveiw(review);
     }
 
