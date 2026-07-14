@@ -28,13 +28,18 @@ public class ReviewController {
     public void createReview(@RequestBody Review review)
     {
         List<String> forbiddenWords = List.of(
-        "cunt",
-        "shit",
-        "stupid",
-        "fuck",
-        "cheat",
-        "cheater",
-        "fraud"
+                "cunt",
+                "shit",
+                "stupid",
+                "fuck",
+                "cheat",
+                "cheater",
+                "fraud",
+                "rob",
+                "robbing",
+                "MOTHERFUCKER",
+                "bitch",
+                "bitches"
         );
         if(review.getGrade() < 1 || review.getGrade() > 5)
         {

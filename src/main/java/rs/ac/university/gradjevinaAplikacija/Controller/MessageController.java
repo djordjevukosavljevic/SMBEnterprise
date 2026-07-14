@@ -51,7 +51,12 @@ public class MessageController {
                 "fuck",
                 "cheat",
                 "cheater",
-                "fraud"
+                "fraud",
+                "rob",
+                "robbing",
+                "MOTHERFUCKER",
+                "bitch",
+                "bitches"
         );
         String notAllowedWord = message.getMessage().toLowerCase();
 
