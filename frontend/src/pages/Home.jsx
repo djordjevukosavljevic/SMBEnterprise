@@ -70,7 +70,7 @@ export default function Home() {
           Get in Touch
         </a>
         <a href="#reviews" className="btn btn-outline-dark btn-lg px-5 py-3">
-          See our grades
+          See our reviews
         </a>
       </div>
     </motion.section>
