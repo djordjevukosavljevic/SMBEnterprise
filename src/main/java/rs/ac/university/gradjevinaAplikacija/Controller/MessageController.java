@@ -8,63 +8,74 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Message;
 import rs.ac.university.gradjevinaAplikacija.Service.MessageService;
+
 import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8083")
 @RestController
-@RequestMapping(path="/api/message")
-public class MessageController
-{
+@RequestMapping(path = "/api/message")
+public class MessageController {
     private final JavaMailSender mailSender;
 
     private final MessageService messageService;
 
     @Autowired
-    public MessageController(MessageService messageService, JavaMailSender mailSender)
-    {
+    public MessageController(MessageService messageService, JavaMailSender mailSender) {
         this.messageService = messageService;
         this.mailSender = mailSender;
     }
 
     @GetMapping
-    public List<Message> getAllMessages()
-    {
+    public List<Message> getAllMessages() {
         return messageService.getAllMessages();
     }
 
-    @GetMapping(path="/{id}")
-    public Optional<Message> getMessageById(@PathVariable Integer id)
-    {
+    @GetMapping(path = "/{id}")
+    public Optional<Message> getMessageById(@PathVariable Integer id) {
         return messageService.getMessageById(id);
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteMessageById(@PathVariable Integer id)
-    {
+    public void deleteMessageById(@PathVariable Integer id) {
         messageService.deleteById(id);
     }
 
 
     @PostMapping
-    public ResponseEntity<String> sendMessage(@RequestBody Message message)
-    {
+    public ResponseEntity<String> sendMessage(@RequestBody Message message) {
+        List<String> badWords = List.of(
+                "cunt",
+                "shit",
+                "stupid",
+                "fuck",
+                "cheat",
+                "cheater",
+                "fraud"
+        );
+        String notAllowedWord = message.getMessage().toLowerCase();
+
+        for(String word: badWords)
+        {
+            if(notAllowedWord.contains(word))
+            {
+                throw new IllegalArgumentException("You are not allowed to send rude words! Fix your attitude.");
+            }
+        }
+
         messageService.saveMessage(message);
         System.out.println("poruka pre smtpa");
         System.out.println(message.getCreatedAt());
-        try
-        {
+        try {
             sendMail(message);
             return ResponseEntity.ok("Message sent successfully...");
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Failed to send a message or save message");
         }
     }
 
-    public void sendMail(Message message)
-    {
+    public void sendMail(Message message) {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(message.getSubject());
         email.setTo("djordje.vukosavljevic01@gmail.com");
@@ -73,8 +84,7 @@ public class MessageController
         mailSender.send(email);
     }
 
-    public String buildEmailBody(Message m)
-    {
+    public String buildEmailBody(Message m) {
         return String.format("""
                 Nova poruka sa sajta:
                 
@@ -86,7 +96,7 @@ public class MessageController
                 Title: %s
                 
                 Message: %s
-                """, m.getCreatedAt(),m.getName(),m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(),m.getMessage());
+                """, m.getCreatedAt(), m.getName(), m.getLastname(), m.getEmail(), m.getMobileNumber(), m.getSubject(), m.getMessage());
     }
 
 
