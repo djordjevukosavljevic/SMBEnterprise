@@ -1,10 +1,8 @@
 package rs.ac.university.gradjevinaAplikacija.error;
 
-public class ExceptionModel
-{
+public class ExceptionModel {
 
-    public ExceptionModel()
-    {
+    public ExceptionModel() {
 
     }
 
@@ -14,33 +12,27 @@ public class ExceptionModel
 
     private String path;
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getMessage()
-    {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message)
-    {
-        this.message = message;
-    }
-
-    public String getPath()
-    {
+    public String getPath() {
         return path;
     }
 
-    public void setPath(String path)
-    {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setPath(String path) {
         this.path = path;
     }
 }
