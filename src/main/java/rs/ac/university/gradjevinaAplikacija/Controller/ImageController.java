@@ -1,10 +1,17 @@
 package rs.ac.university.gradjevinaAplikacija.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.UrlResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.university.gradjevinaAplikacija.Entity.Image;
 import rs.ac.university.gradjevinaAplikacija.Service.ImageService;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,38 +29,29 @@ public class ImageController
         this.service = service;
     }
 
-    @PostMapping
-    public void uploadImage(@RequestBody Image image)
-    {
-//        if(image.getPath() == null || image.getPath().isEmpty())
-//        {
-//            return ResponseEntity.badRequest().body("Invalid path - cannot be empty");
-//        }
-//
-//        if(image.getSize() > 5000)
-//        {
-//
-//        }
-        service.uploadImage(image);
-    }
-
     @GetMapping
     public List<Image> getAllImages()
     {
         return service.getAllImages();
     }
 
-    @GetMapping(path = "/{id}")
-    public Optional<Image> getImageById(@PathVariable Integer id)
+    @GetMapping("/file/{filename}")
+    public ResponseEntity<Resource> getImageFile(@PathVariable String filename) throws IOException
     {
-        return service.findImageById(id);
+        Path filePath = Paths.get("uploads/images").resolve(filename);
+
+        Resource resource = new UrlResource(filePath.toUri());
+
+        if(!resource.exists())
+        {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(resource);
     }
 
-    @PutMapping(path="/{id}")
-    public void changeImage(@RequestBody Image image)
-    {
-        service.updateImage(image);
-    }
 
     @DeleteMapping(path="/{id}")
     public void deleteImageById(@PathVariable Integer id)
@@ -61,9 +59,4 @@ public class ImageController
         service.deleteImageById(id);
     }
 
-    @GetMapping(path="/name")
-    public Image findImageByName(@PathVariable String name)
-    {
-        return service.findImgByName(name);
-    }
 }
