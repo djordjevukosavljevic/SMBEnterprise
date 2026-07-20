@@ -39,7 +39,8 @@ public class ReviewController {
                 "robbing",
                 "MOTHERFUCKER",
                 "bitch",
-                "bitches"
+                "bitches",
+                "fool"
         );
         if(review.getGrade() < 1 || review.getGrade() > 5)
         {
@@ -54,6 +55,13 @@ public class ReviewController {
             {
                 throw new IllegalArgumentException("Comment cannot contain bad words");
             }
+
+            if(comment.toString() == "")
+            {
+                throw new IllegalArgumentException("Comment cannot be blank!");
+            }
+
+
         }
 
         reviewService.createReveiw(review);

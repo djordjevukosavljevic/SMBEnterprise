@@ -35,11 +35,6 @@ export default function Reviews() {
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-10 col-xl-8 text-center">
                         <h3 class="fw-bold mb-4">Testimonials</h3>
-                        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
-                            numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
-                            quisquam eum porro a pariatur veniam.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -64,7 +59,7 @@ export default function Reviews() {
                         <i class="fas fa-star-half-alt fa-sm text-info"></i>
                     </li>
                 </ul>
-                <p class="mb-2">
+            <p class="mb-2">
                     <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
                     consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
                     ad velit ab hic tenetur.
