@@ -10,6 +10,7 @@ import rs.ac.university.gradjevinaAplikacija.Entity.Image;
 import rs.ac.university.gradjevinaAplikacija.Service.ImageService;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -30,12 +31,16 @@ public class ImageController
     }
 
     @GetMapping
-    public List<Image> getAllImages()
-    {
-        return service.getAllImages();
+    public List<String> getAllImages() throws IOException {
+
+        Path folder = Paths.get("uploads/images");
+
+        return Files.list(folder)
+                .map(path -> path.getFileName().toString())
+                .toList();
     }
 
-    @GetMapping("/file/{filename}")
+    @GetMapping("/{filename}")
     public ResponseEntity<Resource> getImageFile(@PathVariable String filename) throws IOException
     {
         Path filePath = Paths.get("uploads/images").resolve(filename);
