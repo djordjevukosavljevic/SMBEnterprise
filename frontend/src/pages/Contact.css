@@ -1,0 +1,19 @@
+.form-control {
+  background-color: transparent !important;
+  color: #111; /* crna slova */
+  border: 3px solid rgba(0, 0, 0, 0.2); /* deblja linija */
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control:focus {
+  border: 2px solid #4f46e5; /* moderna plava */
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  outline: none;
+}

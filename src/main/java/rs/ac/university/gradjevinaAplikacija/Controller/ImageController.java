@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://192.168.1.95:8084")
 @RestController
 @RequestMapping(path ="/api/image")
 public class ImageController
@@ -39,7 +39,7 @@ public class ImageController
                 .toList();
     }
 
-    @GetMapping("/{filename}")
+    @GetMapping("/{filename:.+}")
     public ResponseEntity<Resource> getImageFile(@PathVariable String filename) throws IOException
     {
         Path filePath = Paths.get("uploads/images").resolve(filename);
@@ -51,11 +51,17 @@ public class ImageController
             return ResponseEntity.notFound().build();
         }
 
+        String contentType = Files.probeContentType(filePath);
+
+        if(contentType == null)
+        {
+            contentType = "application/octet-stream";
+        }
+
         return ResponseEntity.ok()
-                .contentType(MediaType.IMAGE_JPEG)
+                .contentType(MediaType.parseMediaType(contentType))
                 .body(resource);
     }
-
 
     @DeleteMapping(path="/{id}")
     public void deleteImageById(@PathVariable Integer id)

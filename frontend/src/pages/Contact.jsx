@@ -73,8 +73,8 @@ export default function Contact() {
         <section id="contact" className="container py-5">
             <div className="container py-5">
                 <div className="form-control p-4" style={{ fontSize: "20px" }}>
-                    <h1 className="h3 text-center">
-                        <b>Get in touch</b>
+                    <h1 className="h2 text-center">
+                        <b>Send us a message</b>
                     </h1>
 
                     <p>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import "./Contact.css"
 
 export default function About() {
     const ref1 = useRef(null);
