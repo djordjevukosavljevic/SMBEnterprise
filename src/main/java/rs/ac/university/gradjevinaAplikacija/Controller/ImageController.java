@@ -6,7 +6,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.ac.university.gradjevinaAplikacija.Entity.Image;
 import rs.ac.university.gradjevinaAplikacija.Service.ImageService;
 
 import java.io.IOException;
@@ -16,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 
-@CrossOrigin(origins = "http://192.168.1.95:8084")
+@CrossOrigin(origins = "http://172.20.10.9:8084")
 @RestController
 @RequestMapping(path ="/api/image")
 public class ImageController
